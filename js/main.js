@@ -4,6 +4,53 @@
 (function () {
   "use strict";
 
+  /* ---------- Form submission (Google Apps Script backends) ----------
+     Two separate Apps Script projects, deployed separately, each with
+     its own Web App URL — paste them in below.
+       - General-Inquiry.gs handles Home / About Us / R&D / Contact Us
+       - Careers.gs handles the Careers application form            */
+  var APPS_SCRIPT_GENERAL_URL = "https://script.google.com/macros/s/AKfycbw0o08Okoizet83Z4SezcujgITm2qEtDvjtYRpWwx8HfpD6N6f8PUWED6QhLZHDgkKf/exec";
+  var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbxpkAxJbX5D3_6PvUtfnir34dpuxCZ3VNZWRGxiIfbscGhDjuw-r4Ye_KTmNqT382CJJg/exec";
+
+  function wireForm(formId, scriptUrl) {
+    var form = document.getElementById(formId);
+    if (!form) return;
+    var wrapper = form.parentElement;
+    var doneMsg = wrapper.querySelector(".w-form-done");
+    var failMsg = wrapper.querySelector(".w-form-fail");
+    var submitBtn = form.querySelector("button[type=submit]");
+
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+      if (failMsg) failMsg.style.display = "none";
+      if (submitBtn) submitBtn.disabled = true;
+
+      var data = new FormData(form);
+
+      fetch(scriptUrl, {
+        method: "POST",
+        mode: "no-cors",
+        body: data
+      })
+        .then(function () {
+          /* "no-cors" gives an opaque response (Apps Script doesn't
+             send CORS headers), so we can't read a real status back —
+             if the request didn't throw, treat it as a success. */
+          form.style.display = "none";
+          if (doneMsg) doneMsg.style.display = "block";
+        })
+        .catch(function () {
+          if (submitBtn) submitBtn.disabled = false;
+          if (failMsg) failMsg.style.display = "block";
+        });
+    });
+  }
+
+  ["email-form-2", "email-form"].forEach(function (id) {
+    wireForm(id, APPS_SCRIPT_GENERAL_URL);
+  });
+  wireForm("careers-application-form", APPS_SCRIPT_CAREERS_URL);
+
   /* ---------- Hero video: force play (some contexts ignore the autoplay URL param on iframes) ---------- */
   document.querySelectorAll(".hero-video-wrap iframe").forEach(function (frame) {
     frame.addEventListener("load", function () {
@@ -211,15 +258,4 @@
     }
   }
 
-  /* ---------- Contact form (Section 408) — inert client-side handling ---------- */
-  var form = document.getElementById("email-form-2");
-  if (form) {
-    var doneMsg = form.parentElement.querySelector(".w-form-done");
-    var failMsg = form.parentElement.querySelector(".w-form-fail");
-    form.addEventListener("submit", function (e) {
-      e.preventDefault();
-      form.style.display = "none";
-      if (doneMsg) doneMsg.style.display = "block";
-    });
-  }
 })();

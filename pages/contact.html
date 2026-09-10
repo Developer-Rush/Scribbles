@@ -96,12 +96,15 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <section class="section contact-form-section">
     <div class="container">
       <form class="contact-form" id="email-form" name="email-form">
-        <input class="contact-field" type="text" name="First-Name" id="First-Name" placeholder="First Name" maxlength="256" required>
+        <input type="hidden" name="Page" value="Contact Us">
+        <input class="contact-field" type="text" name="Name" id="First-Name" placeholder="First Name" maxlength="256" required>
         <input class="contact-field" type="email" name="Email" id="Email" placeholder="Email Address" maxlength="256" required>
-        <input class="contact-field" type="tel" name="Mobile-Number" id="Mobile-Number" placeholder="Mobile Number" required>
-        <textarea class="contact-field" name="How-can-we-help-you" id="How-can-we-help-you" placeholder="How Can We Help You?" maxlength="5000"></textarea>
+        <input class="contact-field" type="tel" name="Phone" id="Mobile-Number" placeholder="Mobile Number" required>
+        <textarea class="contact-field" name="Message" id="How-can-we-help-you" placeholder="How Can We Help You?" maxlength="5000"></textarea>
         <button type="submit" class="contact-submit">Send Inquiry</button>
       </form>
+      <div class="w-form-done" style="display:none;">Thank you! Your submission has been received!</div>
+      <div class="w-form-fail" style="display:none;">Oops! Something went wrong while submitting the form.</div>
     </div>
   </section>
 
