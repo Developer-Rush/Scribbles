@@ -5,7 +5,7 @@
   "use strict";
 
   if (!("IntersectionObserver" in window)) {
-    document.querySelectorAll(".rd-reveal, .reveal-left, .reveal-right").forEach(function (el) {
+    document.querySelectorAll(".rd-reveal, .rd-reveal-seq, .reveal-left, .reveal-right").forEach(function (el) {
       el.classList.add("is-revealed");
     });
     return;
@@ -72,5 +72,11 @@
   /* Hero banner slides — kept slower than the rest of the page. */
   setupReveal([".reveal-left"], "translate(-40px,0)", 2.2);
   setupReveal([".reveal-right"], "translate(40px,0)", 2.2);
+
+  /* Sections that must reveal strictly in their own top-to-bottom
+     order (e.g. R&D's "Evolving / Technology / Investment" blocks) —
+     kept in a separate group so their stagger count never gets thrown
+     off by unrelated elements earlier on the page. */
+  setupReveal([".rd-reveal-seq"], "translate(0,24px)");
 
 })();

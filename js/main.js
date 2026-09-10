@@ -9,8 +9,8 @@
      its own Web App URL — paste them in below.
        - General-Inquiry.gs handles Home / About Us / R&D / Contact Us
        - Careers.gs handles the Careers application form            */
-  var APPS_SCRIPT_GENERAL_URL = "https://script.google.com/macros/s/AKfycbw0o08Okoizet83Z4SezcujgITm2qEtDvjtYRpWwx8HfpD6N6f8PUWED6QhLZHDgkKf/exec";
-  var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbxpkAxJbX5D3_6PvUtfnir34dpuxCZ3VNZWRGxiIfbscGhDjuw-r4Ye_KTmNqT382CJJg/exec";
+  var APPS_SCRIPT_GENERAL_URL = "https://script.google.com/macros/s/AKfycbzEdAbOcJJ9z9akCcGtsk3L7uL_kVGjUGbEXE1KwQYhU08v8SHGvYGvBaIP17XLTnTy/exec";
+  var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbxYHg_jOZxEykMYL6KtzmnHynxKNVKn4gA0nVoUycxH2IBSuBCG2QH-QzYBoyUJOZmQ/exec";
 
   function wireForm(formId, scriptUrl) {
     var form = document.getElementById(formId);
