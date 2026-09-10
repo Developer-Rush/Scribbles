@@ -1,0 +1,518 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Case Study | Scribbles School Uniforms</title>
+<link rel="stylesheet" href="../css/style.css">
+
+<!-- Google Tag Manager -->
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KGNQ4NTH');</script>
+<!-- End Google Tag Manager -->
+
+<!-- Google Analytics 4 -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-RLBH8GPRSV"></script>
+<script>
+window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'G-RLBH8GPRSV');
+</script>
+
+<style>
+  /* ===== Case Study page — scoped styles ===== */
+  .cs-hero{
+    padding: var(--space-xl) 0 0;
+  }
+  .cs-hero-frame{
+    border: 2px solid var(--color-black);
+    padding: 30px;
+  }
+  @media (max-width:767px){
+    .cs-hero-frame{ padding: 16px 16px 0; }
+  }
+  .cs-hero-frame img{
+    width:100%;
+    display:block;
+    border-radius: 2px;
+  }
+  .cs-hero-text{
+    display:flex;
+    flex-wrap:wrap;
+    gap: var(--space-lg);
+    border-bottom: 3px solid var(--color-black);
+    padding: 28px 0 24px;
+  }
+  .cs-hero-titles{
+    flex: 1 1 45%;
+    display:flex;
+    flex-direction:column;
+    gap: 6px;
+  }
+  .cs-hero-titles strong{
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(20px, 2.4vw, 28px);
+    line-height: 1.3;
+  }
+  .cs-hero-copy{
+    flex: 1 1 45%;
+    font-size: var(--fs-body-lg);
+    color: var(--color-text-muted);
+  }
+
+  .cs-chapter{
+    padding: var(--space-2xl) 0 var(--space-lg);
+    border-bottom: 1px solid var(--color-border);
+  }
+  @media (max-width:767px){
+    .cs-chapter{ padding: var(--space-xl) 0 var(--space-md); }
+  }
+  .cs-chapter-head{
+    display:flex;
+    flex-wrap:wrap;
+    gap: var(--space-lg);
+    padding-bottom: 40px;
+  }
+  .cs-chapter-title-wrap{
+    flex: 1 1 45%;
+  }
+  .cs-chapter-num{
+    font-family: var(--font-heading);
+    font-weight: 600;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    line-height: 1;
+    display:block;
+    margin-bottom: 6px;
+  }
+  .cs-chapter-sub{
+    font-family: var(--font-body);
+    font-weight: 600;
+    font-size: var(--fs-body-lg);
+  }
+  .cs-chapter-desc{
+    flex: 1 1 45%;
+    font-size: var(--fs-body);
+    color: var(--color-text-muted);
+  }
+  .cs-slider{
+    display:flex;
+    gap: var(--space-md);
+    overflow-x:auto;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 8px;
+    -webkit-overflow-scrolling: touch;
+  }
+  .cs-slide{
+    flex: 0 0 80%;
+    max-width: 720px;
+    scroll-snap-align: start;
+  }
+  @media (min-width: 768px){
+    .cs-slide{ flex-basis: 60%; }
+  }
+  .cs-slide img{
+    width:100%;
+    aspect-ratio: 16/10;
+    object-fit: cover;
+    border-radius: 4px;
+  }
+  .cs-slide-title{
+    text-align:center;
+    font-family: var(--font-heading);
+    font-size: 14px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    padding: 14px 0 4px;
+  }
+  .cs-pattern-strip{
+    height: 8vh;
+    min-height:48px;
+    background-image: url("../assets/images/case-study-hero.webp");
+    background-size: 200px;
+    opacity: 0.08;
+  }
+
+  /* ---- Brand logos strip ---- */
+  .cs-brands{
+    padding: var(--space-xl) 0;
+    overflow:hidden;
+  }
+  .cs-brands-track{
+    display:flex;
+    align-items:center;
+    gap: 75px;
+    width: max-content;
+    animation: cs-scroll 30s linear infinite;
+  }
+  .cs-brands-track img{
+    height: 32px;
+    width:auto;
+    opacity:.7;
+  }
+  @keyframes cs-scroll{
+    from{ transform: translateX(0); }
+    to{ transform: translateX(-50%); }
+  }
+  @media (prefers-reduced-motion: reduce){
+    .cs-brands-track{ animation:none; flex-wrap:wrap; width:auto; }
+  }
+
+  /* ---- Collaborate (dark) section ---- */
+  .cs-collaborate{
+    background: var(--color-black);
+    color: var(--color-white);
+    padding: var(--space-2xl) 0;
+  }
+  .cs-collaborate h2{ color: var(--color-white); margin-bottom: var(--space-lg); }
+  .cs-collaborate .form-field{
+    background: transparent;
+    border: none;
+    border-bottom: 2px solid rgba(255,255,255,0.3);
+    border-radius: 0;
+    color: var(--color-white);
+    padding: 14px 4px;
+  }
+  .cs-collaborate .form-field::placeholder{ color: rgba(255,255,255,0.6); }
+  .cs-collaborate textarea.form-field{ min-height: 90px; }
+  .cs-collaborate .form-field:focus-visible{ outline-color: var(--color-orange); }
+  .cs-tag-label{
+    font-family: var(--font-heading);
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    font-size: 14px;
+    margin: 8px 0 4px;
+  }
+  .cs-tag-list{
+    display:flex;
+    flex-wrap:wrap;
+    gap: 12px;
+    margin-bottom: 8px;
+  }
+  .cs-tag{
+    border: 1px solid rgba(255,255,255,0.4);
+    border-radius: 999px;
+    padding: 10px 18px;
+    font-family: var(--font-heading);
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: var(--color-white);
+    transition: background var(--dur-fast) var(--ease), color var(--dur-fast) var(--ease);
+  }
+  .cs-tag:hover{ background: var(--color-white); color: var(--color-black); }
+  .cs-collaborate .button{
+    border-color: var(--color-white);
+    color: var(--color-white);
+    align-self: flex-start;
+  }
+  .cs-collaborate .button:hover{ background: var(--color-white); color: var(--color-black); }
+</style>
+</head>
+<body>
+<!-- Google Tag Manager (noscript) -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGNQ4NTH"
+height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<!-- End Google Tag Manager (noscript) -->
+
+<!-- ===== Header ===== -->
+<header class="site-header" id="Navber">
+  <div class="nav-container">
+    <a href="../index.html" class="nav-logo" aria-label="Scribbles home">
+      <img src="../assets/icons/logo.svg" alt="Scribbles" width="140">
+    </a>
+
+    <div class="nav-right">
+      <a href="https://scribblesuniforms.com/store" target="_blank" rel="noopener" class="store-link">
+        <img src="../assets/icons/shopping-bag.svg" alt="">
+        <span>Shop</span>
+      </a>
+      <button class="menu-button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+        <span class="burger-line"></span>
+      </button>
+    </div>
+  </div>
+
+  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
+    <a href="../index.html">Home</a>
+    <a href="#">Why Us</a>
+    <a href="#">Products</a>
+    <a href="#">Lookbook</a>
+    <a href="process.html">Process</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+</header>
+
+<main>
+
+  <!-- ===== Case Study Hero ===== -->
+  <section class="cs-hero">
+    <div class="container">
+      <div class="cs-hero-frame reveal">
+        <img src="../assets/images/case-study-hero.webp" alt="Students in Scribbles school uniforms" loading="eager">
+        <div class="cs-hero-text">
+          <div class="cs-hero-titles">
+            <strong>Shape the strategy.</strong>
+            <strong>Design for real school life.</strong>
+            <strong>Manufacture with consistency.</strong>
+          </div>
+          <p class="cs-hero-copy">
+            Childhood is the most expressive phase of growing up and we believe it should be the best days of
+            their lives. If children spend most of their day in uniforms, those uniforms should make them feel
+            good. What started as a small initiative has grown into one of India's most trusted schoolwear
+            brands, serving students who play hard, learn with passion and dream big.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 1: Strategy ===== -->
+  <section class="section cs-chapter">
+    <div class="container">
+      <div class="cs-chapter-head">
+        <div class="cs-chapter-title-wrap reveal">
+          <span class="cs-chapter-num">Strategy</span>
+          <p class="cs-chapter-sub">Aligning identity with how it shows up</p>
+        </div>
+        <p class="cs-chapter-desc reveal">
+          A school approached us with a clearly defined vision, but no consistent way of expressing it across its
+          student body. The uniform had remained unchanged while the institution had evolved. We worked with the
+          leadership team to translate their values into a clear visual and operational framework, defining what
+          needed to stay constant and what needed to change. The result was not a redesign, but a realignment,
+          where identity became visible, consistent and scalable.
+        </p>
+      </div>
+      <div class="cs-slider reveal">
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-1.webp" alt="Case Study 1" loading="lazy">
+          <div class="cs-slide-title">Case Study 1</div>
+        </div>
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-2.webp" alt="Case Study 2" loading="lazy">
+          <div class="cs-slide-title">Case Study 2</div>
+        </div>
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-3.webp" alt="Case Study 3" loading="lazy">
+          <div class="cs-slide-title">Case Study 3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 2: Design ===== -->
+  <section class="section cs-chapter">
+    <div class="container">
+      <div class="cs-chapter-head">
+        <div class="cs-chapter-title-wrap reveal">
+          <span class="cs-chapter-num">Design</span>
+          <p class="cs-chapter-sub">Evolving performance through material and fit</p>
+        </div>
+        <p class="cs-chapter-desc reveal">
+          In another engagement, the challenge was not appearance, but experience. Students were spending long
+          hours in garments that were not built for movement or climate. Feedback pointed to discomfort,
+          inconsistency in fit and high replacement cycles. We reworked the system across fabrics, construction
+          and sizing by introducing lighter materials, improved durability and a more responsive fit framework
+          across age groups. Sustainability was introduced through longer-lasting materials rather than
+          short-term substitutions. The changes were subtle in form, but noticeable in use.
+        </p>
+      </div>
+      <div class="cs-slider reveal">
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-1.webp" alt="Case Study 1" loading="lazy">
+          <div class="cs-slide-title">Case Study 1</div>
+        </div>
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-2.webp" alt="Case Study 2" loading="lazy">
+          <div class="cs-slide-title">Case Study 2</div>
+        </div>
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-3.webp" alt="Case Study 3" loading="lazy">
+          <div class="cs-slide-title">Case Study 3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Chapter 3: Manufacturing & Delivery ===== -->
+  <section class="section cs-chapter">
+    <div class="container">
+      <div class="cs-chapter-head">
+        <div class="cs-chapter-title-wrap reveal">
+          <span class="cs-chapter-num">Manufacturing &amp; Delivery</span>
+          <p class="cs-chapter-sub">Redesigning manufacturing for peak capacity</p>
+        </div>
+        <p class="cs-chapter-desc reveal">
+          Uniform demand is predictable in timing, but difficult in execution. A partner school faced recurring
+          delays during peak periods, despite having sufficient production capacity. The issue was not volume,
+          but coordination. We restructured production planning, introduced better visibility across inventory
+          and aligned distribution timelines with school calendars. The system was redesigned to expand during
+          peak demand while maintaining consistency. What changed was not the output but the reliability behind
+          it.
+        </p>
+      </div>
+      <div class="cs-slider reveal">
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-1.webp" alt="Case Study 1" loading="lazy">
+          <div class="cs-slide-title">Case Study 1</div>
+        </div>
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-2.webp" alt="Case Study 2" loading="lazy">
+          <div class="cs-slide-title">Case Study 2</div>
+        </div>
+        <div class="cs-slide">
+          <img src="../assets/images/case-study-slide-3.webp" alt="Case Study 3" loading="lazy">
+          <div class="cs-slide-title">Case Study 3</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="cs-pattern-strip" aria-hidden="true"></div>
+
+  <!-- ===== The Scribbles Insights ===== -->
+  <section class="section">
+    <div class="container">
+      <h2 class="reveal" style="margin-bottom:40px;">The Scribbles Insights</h2>
+      <div class="insights-grid">
+        <a href="#" class="insight-card reveal">
+          <img class="project-image" src="../assets/images/case-study-slide-2.webp" alt="What Matters to Gen-Z When It Comes to School Uniforms?">
+          <h3>What Matters to Gen-Z When It Comes to School Uniforms?</h3>
+          <span class="read-more">View more...</span>
+        </a>
+        <a href="#" class="insight-card reveal reveal-delay-1">
+          <img class="project-image" src="../assets/images/case-study-insight-2.webp" alt="Inside the Design of a Modern School Uniform">
+          <h3>Inside the Design of a Modern School Uniform</h3>
+          <span class="read-more">View more...</span>
+        </a>
+        <a href="#" class="insight-card reveal reveal-delay-2">
+          <img class="project-image" src="../assets/images/case-study-slide-3.webp" alt="The Future of Schoolwear">
+          <h3>The Future of Schoolwear</h3>
+          <span class="read-more">View more...</span>
+        </a>
+      </div>
+      <div class="reveal" style="margin-top:40px;text-align:center;">
+        <a href="#" class="button">
+          <span class="button-text">Read More Blogs</span>
+          <span class="button-background-color"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== Brand logos ===== -->
+  <section class="cs-brands reveal">
+    <div class="cs-brands-track">
+      <img src="../assets/images/case-study-brand-logo-01.svg" alt="Partner brand logo" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-02.svg" alt="Partner brand logo" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-03.svg" alt="Partner brand logo" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-04.svg" alt="Partner brand logo" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-05.svg" alt="Partner brand logo" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-06.svg" alt="Partner brand logo" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-07.svg" alt="Partner brand logo" loading="lazy">
+      <!-- duplicated for seamless marquee loop -->
+      <img src="../assets/images/case-study-brand-logo-01.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-02.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-03.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-04.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-05.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-06.svg" alt="" aria-hidden="true" loading="lazy">
+      <img src="../assets/images/case-study-brand-logo-07.svg" alt="" aria-hidden="true" loading="lazy">
+    </div>
+  </section>
+
+  <!-- ===== Let's Collaborate (long form) ===== -->
+  <section class="cs-collaborate">
+    <div class="container">
+      <h2 class="reveal">Let's collaborate!</h2>
+      <form class="form reveal" id="email-form" name="email-form">
+        <input class="form-field" type="text" name="name-2" id="name-2" placeholder="Full Name" maxlength="256">
+        <input class="form-field" type="email" name="email-2" id="email-2" placeholder="Email address" maxlength="256" required>
+        <textarea class="form-field" name="Massage-2" id="Massage-2" placeholder="Project Details" maxlength="5000"></textarea>
+
+        <div class="cs-tag-label">Our Collections</div>
+        <div class="cs-tag-list">
+          <a href="#" class="cs-tag">Polos</a>
+          <a href="#" class="cs-tag">Shirts</a>
+          <a href="#" class="cs-tag">Jumpers</a>
+          <a href="#" class="cs-tag">Pants</a>
+          <a href="#" class="cs-tag">Skirts</a>
+          <a href="#" class="cs-tag">Shorts</a>
+          <a href="#" class="cs-tag">Blazers</a>
+          <a href="#" class="cs-tag">Sweaters</a>
+          <a href="#" class="cs-tag">Others</a>
+        </div>
+
+        <button type="submit" class="button">
+          <span class="button-text">Send Inquiry</span>
+          <span class="button-background-color"></span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ===== Let's Connect (short form) ===== -->
+  <section class="section" style="background:var(--color-cream);">
+    <div class="container">
+      <h2 class="reveal" style="margin-bottom:32px;">Let's Connect</h2>
+      <form class="form reveal" id="email-form-2" name="email-form-2">
+        <input class="form-field" type="text" name="field" id="field" placeholder="Name" maxlength="256">
+        <input class="form-field" type="email" name="email-3" id="email-3" placeholder="Email" maxlength="256" required>
+        <input class="form-field" type="tel" name="Phone-Number" id="Phone-Number" placeholder="Phone Number" required>
+        <textarea class="form-field" name="inquiry" id="inquiry" placeholder="Tell us about your inquiry" maxlength="5000"></textarea>
+        <button type="submit" class="button">
+          <span class="button-text">Submit</span>
+          <span class="button-background-color"></span>
+        </button>
+      </form>
+    </div>
+  </section>
+
+</main>
+
+<!-- ===== Footer ===== -->
+<footer class="section-footer">
+  <div class="footer-left-content-wrapper">
+    <div class="footer-padding"></div>
+    <div class="footer-left-content">
+      <div class="footer-grid">
+        <div class="footer-link-wrapper">
+          <div class="footer-links">
+            <a href="../index.html" class="footer-link">Home</a>
+            <a href="about.html" class="footer-link">About</a>
+            <a href="careers.html" class="footer-link">Careers</a>
+            <a href="process.html" class="footer-link">Process</a>
+            <a href="rd.html" class="footer-link">R&amp;D</a>
+            <a href="contact.html" class="footer-link">Contact</a>
+            <a href="https://scribblesuniforms.com/store" class="footer-link" target="_blank" rel="noopener">Store</a>
+          </div>
+        </div>
+        <div class="footer-social-links-wrapper">
+          <div class="footer-social-links">
+            <a href="https://www.facebook.com/scribblesatschool" class="footer-social-link" target="_blank" rel="noopener"><img src="../assets/icons/facebook.svg" alt="Facebook"></a>
+            <a href="https://www.instagram.com/scribblesuniforms/?hl=en" class="footer-social-link" target="_blank" rel="noopener"><img src="../assets/icons/instagram.svg" alt="Instagram"></a>
+            <a href="https://in.linkedin.com/company/scribbles-uniforms" class="footer-social-link" target="_blank" rel="noopener"><img src="../assets/icons/linkedin.svg" alt="LinkedIn"></a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="footer-bottom-content">
+      <div class="text-size-small is-footer">Designed by <a href="https://www.therushrepublic.com/" target="_blank" rel="noopener"><span class="text-span-6">RUSH REPUBLIC</span></a></div>
+      <a href="#top" class="footer-bottom-link" id="backToTop">
+        <div>Back to Top</div>
+        <img src="../assets/icons/arrow-up.svg" alt="">
+      </a>
+    </div>
+  </div>
+</footer>
+
+<script src="../js/animations.js"></script>
+<script src="../js/main.js"></script>
+</body>
+</html>

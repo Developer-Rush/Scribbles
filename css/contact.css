@@ -1,0 +1,259 @@
+:root {
+  --contact-bg: #f7f4e8;
+  --contact-text: #111111;
+  --contact-muted: #5f5f5a;
+}
+
+body {
+  margin: 0;
+  background: var(--contact-bg);
+  color: var(--contact-text);
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+}
+
+/* ---------- Header (shared pattern) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(241, 239, 233, 0.96);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.site-header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 170px;
+  height: auto;
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-right: 20px;
+  border: none;
+  background: transparent;
+  color: var(--contact-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.store-link img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .site-header .nav-container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .nav-logo img {
+    width: 132px;
+  }
+
+  .store-link {
+    display: none;
+  }
+}
+
+/* ---------- Main ---------- */
+main {
+  background: var(--contact-bg);
+}
+
+.container {
+  max-width: 100rem;
+  margin: 0 auto;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+/* ---------- Hero ---------- */
+.contact-hero {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.contact-heading-wrap {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  padding: 1.5rem 0;
+}
+
+.contact-heading-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/home-pattern-dot.png");
+  background-position: 0% 0%;
+  background-size: 180px;
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+.contact-heading-wrap h1,
+.contact-heading-wrap h2 {
+  margin: 0;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 3.5rem;
+  line-height: 3.5rem;
+  text-transform: none;
+  color: var(--contact-text);
+}
+
+/* ---------- Contact form ---------- */
+.contact-form-section {
+  padding-top: 1rem;
+  padding-bottom: 3rem;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.contact-field {
+  width: 100%;
+  border: none;
+  border-bottom: 2px solid rgba(17, 17, 17, 0.6);
+  background: transparent;
+  padding: 1.5rem 0;
+  margin: 0;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-size: 1.1rem;
+  color: var(--contact-text);
+  outline: none;
+  resize: vertical;
+}
+
+textarea.contact-field {
+  min-height: 130px;
+  padding-top: 1.5rem;
+}
+
+.contact-field::placeholder {
+  color: rgba(17, 17, 17, 0.55);
+}
+
+.contact-submit {
+  display: block;
+  width: 100%;
+  margin-top: 2rem;
+  padding: 1.25rem;
+  border: none;
+  background: #000;
+  color: #fff;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-size: 1.05rem;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-align: center;
+  cursor: pointer;
+  transition: opacity 0.25s ease;
+}
+
+.contact-submit:hover {
+  opacity: 0.85;
+}
+
+@media (max-width: 640px) {
+  .container {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .contact-heading-wrap h1,
+  .contact-heading-wrap h2 {
+    font-size: 2rem;
+    line-height: 2.4rem;
+  }
+
+  .contact-field {
+    font-size: 1rem;
+    padding: 1.1rem 0;
+  }
+}
+
+/* ---------- Locations / Contact Details ---------- */
+.contact-locations {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+}
+
+.contact-section-heading {
+  margin-bottom: 2rem;
+}
+
+.location-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 2rem 3.5rem;
+}
+
+@media (max-width: 767px) {
+  .location-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+.location-card {
+  background: #fff;
+  border-top: 4px solid #000;
+  padding: 2rem;
+}
+
+.location-card h4 {
+  margin: 0 0 1rem;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: var(--contact-text);
+}
+
+.location-card p {
+  margin: 0 0 0.25rem;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  font-weight: 300;
+  color: var(--contact-text);
+}
+
+.location-card a.contact-link {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-size: 1.05rem;
+  font-weight: 300;
+  color: var(--contact-text);
+  text-decoration: underline;
+  word-break: break-word;
+}

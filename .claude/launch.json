@@ -1,0 +1,11 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "static-site",
+      "runtimeExecutable": "python3",
+      "runtimeArgs": ["-m", "http.server", "8791", "--directory", "/Users/sivaraj/Desktop/Drive/Rush Republic/Website Assets/Scribbles/Claude code"],
+      "port": 8791
+    }
+  ]
+}

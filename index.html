@@ -1,0 +1,413 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Scribbles Uniforms — School Uniform Manufacturer</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Quick Contact Bar (component, off-canvas drawer, hidden by default) -->
+<div class="quick-contact-content-wrapper" id="quickContact">
+  <div class="quick-contact-panel">
+    <h1>Let&rsquo;s collaborate!</h1>
+    <button type="button" class="close-icon-wrapper" id="quickContactClose" aria-label="Close">&times;</button>
+  </div>
+</div>
+
+<div class="page-wrapper">
+
+  <!-- Navbar (component) -->
+  <div class="x" id="Navber">
+    <div class="padding-global header-bar">
+      <div class="nav-container">
+        <div class="navber-left-content">
+          <a href="index.html" class="nav-logo"><img src="assets/images/home-nav-logo.svg" alt="Scribbles Uniforms"></a>
+        </div>
+        <div class="navber-right-content">
+          <nav class="nav-menu">
+            <a href="index.html" class="nav-link"><div class="nav-link-text">Home</div></a>
+            <a href="pages/about.html" class="nav-link"><div class="nav-link-text">About Us</div></a>
+            <a href="pages/products.html" class="nav-link"><div class="nav-link-text">Products</div></a>
+            <a href="pages/lookbook.html" class="nav-link"><div class="nav-link-text">Lookbook</div></a>
+            <a href="pages/process.html" class="nav-link"><div class="nav-link-text">Process</div></a>
+            <a href="pages/contact.html" class="nav-link"><div class="nav-link-text">Contact</div></a>
+          </nav>
+          <div class="container-39">
+            <a href="https://scribblesuniforms.com/store" class="store-link" target="_blank" rel="noopener">
+              <img src="assets/images/icon-shop-bag.svg" alt="" class="shop-icon">
+              <div class="text-block-9">Shop</div>
+            </a>
+            <div class="nav-bar">
+              <div class="menu-button-2" id="hamburgerBtn" aria-label="Open menu">
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+                <div class="burger-line"></div>
+              </div>
+              <div class="full-screen-menu" id="fullScreenMenu">
+                <div class="container-large hamburger-menu-container">
+                  <div class="container-10">
+                    <div class="menu-heading-text">Who we are</div>
+                    <a href="index.html" class="nav-link-2">Home</a>
+                    <a href="pages/about.html" class="nav-link-2">About us</a>
+                    <a href="pages/careers.html" class="nav-link-2">Careers</a>
+                  </div>
+                  <div class="container-10">
+                    <div class="menu-heading-text">What we do</div>
+                    <a href="pages/process.html" class="nav-link-2">Process</a>
+                    <a href="pages/rd.html" class="nav-link-2">R&amp;D</a>
+                  </div>
+                  <div class="container-10">
+                    <div class="menu-heading-text">Store</div>
+                    <a href="https://scribblesuniforms.com/store" class="nav-link-2" target="_blank" rel="noopener">Store</a>
+                  </div>
+                  <div class="container-10">
+                    <div class="menu-heading-text">Get in touch</div>
+                    <a href="pages/contact.html" class="nav-link-2">Contact Us</a>
+                    <div class="footer-social-links header-menu-social-icon-wrapper">
+                      <a href="https://www.facebook.com/scribblesatschool" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/images/icon-facebook.svg" alt="Facebook"></a>
+                      <a href="https://www.instagram.com/scribblesuniforms/?hl=en" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/images/icon-instagram.svg" alt="Instagram"></a>
+                      <a href="https://in.linkedin.com/company/scribbles-uniforms" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/images/icon-linkedin.svg" alt="LinkedIn"></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="main-wrapper">
+
+    <!-- Hero (desktop) -->
+    <section class="section-409 banner-video-desktop">
+      <div class="code-embed hero-video-wrap">
+        <img src="assets/images/home-hero-fallback.jpg" alt="Scribbles school uniforms" class="hero-poster">
+        <iframe src="https://player.vimeo.com/video/1117740180?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;playsinline=1&amp;background=1" allow="autoplay; fullscreen" title="Scribbles hero video"></iframe>
+        <button type="button" class="hero-unmute" id="heroUnmute" aria-pressed="false">Unmute</button>
+      </div>
+    </section>
+
+    <!-- Hero (mobile) -->
+    <section class="section-409 video-banner-mobile">
+      <div class="code-embed hero-video-wrap">
+        <img src="assets/images/home-hero-fallback.jpg" alt="Scribbles school uniforms" class="hero-poster">
+        <iframe src="https://player.vimeo.com/video/1181088506?autoplay=1&amp;muted=1&amp;loop=1&amp;autopause=0&amp;playsinline=1&amp;background=1" allow="autoplay; fullscreen" title="Scribbles hero video mobile"></iframe>
+      </div>
+    </section>
+
+    <!-- "Crafting better..." rolling ticker -->
+    <section class="section-2 about-section-padding bg-patten-title">
+      <div class="container-33">
+        <div class="container-large section-2-container roling-text-section">
+          <div class="text-ticker_component">
+            <h1 class="heading-style-h2 text-ticker_text">Crafting better</h1>
+            <div class="text-ticker_mask">
+              <div class="text-ticker_carousel" id="tickerCarousel">
+                <div class="text-ticker_text changing">belonging</div>
+                <div class="text-ticker_text changing">comfort</div>
+                <div class="text-ticker_text changing">culture</div>
+                <div class="text-ticker_text changing">uniforms</div>
+                <div class="text-ticker_text changing">belonging</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Roller content wrapper (about intro) -->
+    <section class="section-2 about-section-padding roller-content-wrapper">
+      <div class="container-large section-2-container roling-text-section">
+        <div class="service-header-component home-about-content-wrapper">
+          <div class="service-header-content-wrapper home-left-content-wrapper">
+            <h2 class="text-size-regular process-content-top rolling-content-para">We design and manufacture schoolwear that strengthens belonging, across classrooms, campuses and communities.</h2>
+          </div>
+          <div class="service-header-image-wrapper home-pointer-wrapper">
+            <a href="pages/about.html" class="link-block-3">
+              <ul class="list-5">
+                <li><h4 class="text-size-regular process-content-top home-pointer">Build your next era of school identity</h4></li>
+                <li><h4 class="text-size-regular process-content-top home-pointer">Design community-centered uniforms</h4></li>
+                <li><h4 class="text-size-regular process-content-top home-pointer">Strengthen belonging across your campus</h4></li>
+              </ul>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- About statement paragraph -->
+    <section class="section-2 about-section-padding">
+      <div class="container-large section-2-container">
+        <div class="about-content-wrapper">
+          <div class="about-top-content">
+            <p class="text-style-xxlarge-3">For over 18 years, Scribbles has established itself as one of India&rsquo;s largest end-to-end school uniform brand. We have partnered with schools across the country to manage uniform programs that express each institution&rsquo;s unique identity through thoughtful design and seamless delivery. Discover how a well-crafted uniform can reflect your school&rsquo;s spirit, strengthen its culture, and create a lasting sense of belonging.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Mission Vision -->
+    <div class="section-mission-vision">
+      <div class="padding-global mission-padding-global">
+        <div class="container-large services-home-container">
+          <div class="padding-section-meduim section-2-padding">
+            <div class="mission-vision-component">
+              <div class="mission-vision-grid">
+
+                <div class="mission-vision-card">
+                  <a href="pages/about.html" class="linkbox">
+                    <div class="divider"></div>
+                    <div class="text-size-regular heading-style-h2">Uniform as Strategy</div>
+                    <p class="text-size-regular">We shape uniform strategies that translate your school&rsquo;s values into a clear, consistent identity experienced across every student touchpoint.</p>
+                  </a>
+                </div>
+
+                <div class="mission-vision-card">
+                  <a href="pages/about.html" class="linkbox">
+                    <div class="divider"></div>
+                    <div class="text-size-regular heading-style-h2">Uniform as Design</div>
+                    <div class="mission-vision-item">
+                      <p class="text-size-regular">We design uniforms around real school life, balancing comfort, durability and form through thoughtful materials, fit systems and evolving design practices.</p>
+                    </div>
+                  </a>
+                </div>
+
+                <div class="mission-vision-card">
+                  <a href="pages/about.html" class="linkbox">
+                    <div class="divider"></div>
+                    <div class="text-size-regular heading-style-h2">Uniform at Scale</div>
+                    <p class="text-size-regular">We build systems that ensure consistency across production, delivering uniforms reliably across seasons without compromising quality or performance.</p>
+                  </a>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container-5">
+        <a href="pages/about.html" class="button"><div class="button-background-color"></div><div class="button-text">To Know more!</div></a>
+      </div>
+    </div>
+
+    <!-- Section 407 — Made for the Best days of your life -->
+    <section class="section-407">
+      <div class="container-large bg-heading-container">
+        <div class="container-9">
+          <div class="heading-style-h2 home-overlay-title">Made for<br>the Best days<br>of your life</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Lookback Section — Season 26 Collection -->
+    <section class="lookback-section">
+      <div class="container-large lookbook-cointainer">
+        <div class="container-3">
+          <div class="container-4">
+            <img src="assets/images/home-lookback-bg.webp" alt="Season 26 Collection" class="image-5">
+          </div>
+          <div class="container-4">
+            <h4 class="heading-style-h4"><strong class="bold-text-2">Season 26 Collection</strong></h4>
+            <div class="text-block-2">The new <strong>Season 26</strong> <strong>collection</strong> is a fresh take on timeless design. We&rsquo;ve gone back to the classics and reimagined them with modern perspectives.</div>
+          </div>
+          <div class="container-4">
+            <a href="#" class="button"><div class="button-background-color"></div><div class="button-text">Coming Soon&hellip;</div></a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- The Scribbles Insights — blog collection list -->
+    <div class="bg-patten-title-wrapper home-blog">
+      <div class="container-large patten-bg-title-wrapper">
+        <h1 class="heading-12">The Scribbles Insights</h1>
+      </div>
+    </div>
+    <div class="container-large blog-list-wrapper">
+      <div class="collection-list-wrapper-2 home-blog-collection">
+        <div class="collection-list-2 row-gap-5rem _3-columns">
+          <div class="blog-item">
+            <div class="blog-item-image"><img src="assets/images/home-blog-1.webp" alt="What Matters To Gen-z When It Comes To School Uniforms?"></div>
+            <h2 class="blog-title">What Matters To Gen-z When It Comes To School Uniforms?</h2>
+            <div class="blog-list-button-wrapper">
+              <a href="pages/blog.html" class="button"><div class="button-background-color"></div><div class="button-text">Read more&hellip;</div></a>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="blog-item-image"><img src="assets/images/home-blog-2.jpg" alt="Uniforms That Build Brands"></div>
+            <h2 class="blog-title">Uniforms That Build Brands</h2>
+            <div class="blog-list-button-wrapper">
+              <a href="pages/blog.html" class="button"><div class="button-background-color"></div><div class="button-text">Read more&hellip;</div></a>
+            </div>
+          </div>
+          <div class="blog-item">
+            <div class="blog-item-image"><img src="assets/images/home-blog-3.webp" alt="The 30-Second School Judgment"></div>
+            <h2 class="blog-title">The 30-Second School Judgment</h2>
+            <div class="blog-list-button-wrapper">
+              <a href="pages/blog.html" class="button"><div class="button-background-color"></div><div class="button-text">Read more&hellip;</div></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section Project — Thoughts / Insights grid (secondary, hidden per Webflow "display:none") -->
+    <div class="section-project new-home">
+      <div class="padding-global">
+        <div class="container-large home-blog-container">
+          <div class="padding-section-large padding-top-medium blog-section">
+            <div>
+              <strong class="text-size-regular heading-style-h2 thescriblediff-heading">The Scribbles Insights</strong>
+            </div>
+            <div class="project-component in-home">
+              <div class="thoughts-container home-blogs-wrapper">
+                <div class="thoughts-items blogs-items">
+                  <div class="thoughts-item">
+                    <img src="assets/images/home-blog-1.webp" alt="What Matters to Gen-Z When It Comes to School Uniforms?" class="project-image">
+                    <div class="divider blogs-divider"></div>
+                    <h5 class="heading-style-h5">What Matters to Gen-Z When It Comes to School Uniforms?</h5>
+                    <div class="project-details-item"><a href="pages/blog.html" class="link-block-2"><div class="text-block">View more&hellip;</div></a></div>
+                  </div>
+                  <div class="thoughts-item">
+                    <img src="assets/images/home-blog-2.webp" alt="Inside the Design of a Modern School Uniform" class="project-image">
+                    <div class="divider blogs-divider"></div>
+                    <h5 class="heading-style-h5">Inside the Design of a Modern School Uniform</h5>
+                    <div class="project-details-item"><a href="pages/blog.html" class="link-block-2"><div class="text-block">View more&hellip;</div></a></div>
+                  </div>
+                  <div class="thoughts-item last-item-blog-home">
+                    <img src="assets/images/home-blog-3.webp" alt="The Future of Schoolwear" class="project-image">
+                    <div class="divider blogs-divider"></div>
+                    <h5 class="heading-style-h5">The Future of Schoolwear</h5>
+                    <div class="project-details-item"><a href="pages/blog.html" class="link-block-2"><div class="text-block">View more&hellip;</div></a></div>
+                  </div>
+                </div>
+              </div>
+              <div class="container-16">
+                <a href="pages/blog.html" class="button"><div class="button-background-color"></div><div class="button-text">View more</div></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="container-5">
+      <a href="pages/blog.html" class="button"><div class="button-background-color"></div><div class="button-text">Read More Blogs</div></a>
+    </div>
+
+    <!-- Section Brand Logo — infinite brand marquee -->
+    <div class="section-brand-logo home-logos">
+      <div class="padding-global">
+        <div class="container-large">
+          <div class="brand-component">
+            <div class="brand-tricker-wrapper" id="brandTricker">
+              <div class="brand-tricker">
+                <img src="assets/images/brand-logo-01.svg" alt="Partner school logo" class="brand-logo">
+                <img src="assets/images/brand-logo-02.svg" alt="Partner school logo" class="brand-logo">
+                <img src="assets/images/brand-logo-03.svg" alt="Partner school logo" class="brand-logo">
+                <img src="assets/images/brand-logo-04.svg" alt="Partner school logo" class="brand-logo">
+                <img src="assets/images/brand-logo-05.svg" alt="Partner school logo" class="brand-logo">
+                <img src="assets/images/brand-logo-06.svg" alt="Partner school logo" class="brand-logo">
+                <img src="assets/images/brand-logo-07.svg" alt="Partner school logo" class="brand-logo">
+              </div>
+              <div class="brand-tricker" aria-hidden="true">
+                <img src="assets/images/brand-logo-01.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-02.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-03.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-04.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-05.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-06.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-07.svg" alt="" class="brand-logo">
+              </div>
+              <div class="brand-tricker" aria-hidden="true">
+                <img src="assets/images/brand-logo-01.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-02.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-03.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-04.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-05.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-06.svg" alt="" class="brand-logo">
+                <img src="assets/images/brand-logo-07.svg" alt="" class="brand-logo">
+              </div>
+            </div>
+            <div class="band-side-blur"></div>
+            <div class="band-side-blur 2"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Section 408 — Let's Connect -->
+    <section class="section-408">
+      <div class="container-large home-conact-container">
+        <div class="container-6">
+          <div class="text-block-5"><strong class="text-size-regular heading-style-h2">Let&rsquo;s Connect</strong></div>
+          <div class="form-block">
+            <form id="email-form-2" class="form">
+              <input class="home-form-field" type="text" name="field" placeholder="Name">
+              <input class="home-form-field" type="email" name="Email-3" placeholder="Email" required>
+              <input class="home-form-field" type="tel" name="Phone-Number" placeholder="Phone Number" required>
+              <textarea class="home-form-field" name="field" placeholder="Message"></textarea>
+              <div class="form-btn-wrapper">
+                <button type="submit" class="button home-submit-button">
+                  <span class="button-text">Submit</span>
+                  <span class="button-background-color"></span>
+                </button>
+              </div>
+            </form>
+            <div class="w-form-done" style="display:none;">Thank you! Your submission has been received!</div>
+            <div class="w-form-fail" style="display:none;">Oops! Something went wrong while submitting the form.</div>
+          </div>
+        </div>
+        <div class="container-7"></div>
+      </div>
+    </section>
+
+  </div>
+  <!-- /main-wrapper -->
+
+  <!-- Footer (component) -->
+  <footer class="section-footer">
+    <div class="footer-left-content-wrapper">
+      <div class="footer-padding"></div>
+      <div class="footer-left-content">
+        <div class="footer-grid">
+          <div class="footer-link-wrapper">
+            <div class="footer-links">
+              <a href="index.html" class="footer-link">Home</a>
+              <a href="pages/about.html" class="footer-link">About</a>
+              <a href="pages/careers.html" class="footer-link">Careers</a>
+              <a href="pages/process.html" class="footer-link">Process</a>
+              <a href="pages/rd.html" class="footer-link">R&amp;D</a>
+              <a href="pages/contact.html" class="footer-link">Contact</a>
+              <a href="https://scribblesuniforms.com/store" class="footer-link" target="_blank" rel="noopener">Store</a>
+            </div>
+          </div>
+          <div class="footer-social-links-wrapper">
+            <div class="footer-social-links">
+              <a href="https://www.facebook.com/scribblesatschool" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/images/icon-facebook.svg" alt="Facebook"></a>
+              <a href="https://www.instagram.com/scribblesuniforms/?hl=en" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/images/icon-instagram.svg" alt="Instagram"></a>
+              <a href="https://in.linkedin.com/company/scribbles-uniforms" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/images/icon-linkedin.svg" alt="LinkedIn"></a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="footer-bottom-content">
+        <div class="text-size-small is-footer">Designed by <a href="https://www.therushrepublic.com/" target="_blank" rel="noopener"><span class="text-span-6">RUSH REPUBLIC</span></a></div>
+        <a href="#top" class="footer-bottom-link" id="backToTop">
+          <div>Back to Top</div>
+          <img src="assets/images/icon-arrow-up.svg" alt="">
+        </a>
+      </div>
+    </div>
+  </footer>
+
+</div>
+<!-- /page-wrapper -->
+
+<script src="js/main.js"></script>
+<script src="js/animations.js"></script>
+</body>
+</html>

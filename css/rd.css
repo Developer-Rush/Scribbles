@@ -1,0 +1,394 @@
+:root {
+  --rd-bg: #f7f4e8;
+  --rd-text: #111111;
+  --rd-muted: #5f5f5a;
+}
+
+body {
+  margin: 0;
+  background: var(--rd-bg);
+  color: var(--rd-text);
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+}
+
+/* ---------- Header (shared pattern) ---------- */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  background: rgba(241, 239, 233, 0.96);
+  border-bottom: 1px solid rgba(17, 17, 17, 0.08);
+}
+
+.site-header .nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 100rem;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+}
+
+.nav-logo {
+  display: inline-flex;
+  align-items: center;
+  text-decoration: none;
+}
+
+.nav-logo img {
+  width: 170px;
+  height: auto;
+  display: block;
+}
+
+.nav-right {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+.store-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding-right: 20px;
+  border: none;
+  background: transparent;
+  color: var(--rd-text);
+  text-decoration: none;
+  font-size: 0.9rem;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+}
+
+.store-link img {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .site-header .nav-container {
+    padding-left: 1.2rem;
+    padding-right: 1.2rem;
+  }
+
+  .nav-logo img {
+    width: 132px;
+  }
+
+  .store-link {
+    display: none;
+  }
+}
+
+/* ---------- Main ---------- */
+main {
+  background: var(--rd-bg);
+}
+
+/* ---------- Hero ---------- */
+.rnd-hero {
+  display: flex;
+  align-items: stretch;
+  min-height: 92vh;
+  background: var(--rd-bg);
+}
+
+.rnd-hero-copy {
+  width: 100%;
+  max-width: 55%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 4rem;
+}
+
+.rd-heading-wrap {
+  position: relative;
+  z-index: 0;
+  display: block;
+  width: 100%;
+  max-width: 450px;
+  margin-bottom: 1.5rem;
+  padding: 0.5rem;
+}
+
+.rd-heading-wrap::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("../assets/images/home-pattern-dot.png");
+  background-position: 0% 0%;
+  background-size: 180px;
+  background-repeat: repeat;
+  z-index: -1;
+}
+
+.rd-heading-wrap h1,
+.rd-heading-wrap h2 {
+  margin: 0;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--rd-text);
+}
+
+.rnd-hero-copy p {
+  margin: 0 0 1rem;
+  max-width: 450px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.4em;
+  color: var(--rd-text);
+}
+
+.rnd-hero-copy .button {
+  margin-top: 1rem;
+}
+
+.rnd-hero-image {
+  width: 100%;
+  max-width: 45%;
+  flex: 0 0 45%;
+  background-position: 50% 50%;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+@media (max-width: 1040px) {
+  .rnd-hero {
+    flex-direction: column;
+    min-height: auto;
+  }
+
+  .rnd-hero-copy {
+    max-width: 100%;
+    padding: 2.5rem 1.5rem;
+  }
+
+  .rd-heading-wrap {
+    max-width: 100%;
+  }
+
+  .rnd-hero-copy h1 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .rnd-hero-copy p {
+    font-size: 1rem;
+  }
+
+  .rnd-hero-image {
+    max-width: 100%;
+    flex: none;
+    height: auto;
+    aspect-ratio: 4 / 5;
+    background-position: 50% 20%;
+    order: -1;
+  }
+}
+
+/* ---------- Sticky feature stack (parallax) ---------- */
+.rnd-sticky-section {
+  position: relative;
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.rnd-sticky-container {
+  display: flex;
+  flex-flow: row;
+  align-items: stretch;
+  gap: 40px;
+  width: 80%;
+  max-width: 1400px;
+  min-height: 100vh;
+  margin: 0 auto 4rem;
+  position: sticky;
+  top: 8vh;
+  background: var(--rd-bg);
+}
+
+.rnd-sticky-image-wrapper {
+  width: 100%;
+  max-width: 670px;
+  max-height: 85vh;
+  background-position: 50% 0;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.rnd-sticky-image-wrapper.sticky-1 {
+  background-position: 50%;
+}
+
+.rnd-sticky-text-wrapper {
+  background-color: var(--rd-bg);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 670px;
+}
+
+.container-31 {
+  display: flex;
+  flex-flow: column;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 500px;
+}
+
+.container-32 {
+  align-self: flex-start;
+}
+
+.rnd-sticky-text-wrapper .rd-heading-wrap {
+  margin-bottom: 0;
+}
+
+.rich-text-block {
+  padding-top: 1rem;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.4em;
+  color: var(--rd-text);
+}
+
+.rich-text-block .paragraph {
+  margin: 0 0 10px;
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.4em;
+}
+
+.rich-text-block ul {
+  margin: 0.5rem 0 0;
+  padding-left: 1.2em;
+  list-style: disc;
+}
+
+.rich-text-block li {
+  font-weight: 300;
+  line-height: 1.5em;
+  margin-bottom: 0.6rem;
+}
+
+@media (max-width: 991px) {
+  .rnd-sticky-container {
+    padding: 2rem 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .rnd-sticky-container {
+    flex-flow: column;
+    justify-content: flex-start;
+    align-items: stretch;
+    gap: 0;
+    width: 100%;
+    max-width: 100%;
+    min-height: auto;
+    margin: 0 0 1rem;
+    padding-top: 0;
+    padding-bottom: 1rem;
+    position: static;
+  }
+
+  .rnd-sticky-text-wrapper {
+    width: 100%;
+    padding: 1rem 1rem 0;
+    overflow: visible;
+  }
+
+  .rnd-sticky-image-wrapper {
+    width: 100%;
+    min-height: 300px;
+    background-size: cover;
+  }
+
+  .rnd-sticky-section {
+    padding-top: 0;
+    padding-bottom: 1rem;
+  }
+
+  .container-32 {
+    width: 100%;
+    align-self: stretch;
+  }
+
+  .rnd-sticky-text-wrapper .rd-heading-wrap {
+    padding: 1.5rem 0.5rem;
+  }
+
+  .rnd-sticky-text-wrapper .rd-heading-wrap h1,
+  .rnd-sticky-text-wrapper .rd-heading-wrap h2 {
+    font-size: 1.5rem;
+    line-height: 1.8rem;
+  }
+
+  .rich-text-block,
+  .rich-text-block .paragraph {
+    font-size: 1rem;
+  }
+}
+
+/* ---------- Horizontal text sections (Evolving / Technology / Investment) ---------- */
+.rnd-hor-content {
+  display: flex;
+  flex-flow: row;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 3rem 40px;
+  border-top: 3px solid #000;
+}
+
+.rnd-heading {
+  width: 60%;
+}
+
+.rnd-sticky-con-title {
+  width: 100%;
+  margin: 0;
+  padding-bottom: 10px;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-weight: 500;
+  font-size: 3rem;
+  line-height: 3rem;
+  color: var(--rd-text);
+}
+
+.rnd-heading .rich-text-block {
+  padding-top: 1rem;
+}
+
+.rnd-content-wrap {
+  width: 40%;
+  padding-left: 1rem;
+}
+
+@media (max-width: 900px) {
+  .rnd-hor-content {
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 2rem 1.2rem;
+  }
+
+  .rnd-heading,
+  .rnd-content-wrap {
+    width: 100%;
+    padding-left: 0;
+  }
+
+  .rnd-sticky-con-title {
+    font-size: 1.8rem;
+    line-height: 2.1rem;
+  }
+}
