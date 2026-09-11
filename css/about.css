@@ -325,15 +325,15 @@ main {
   }
 
   .mission-block:nth-child(1) .mission-block-content {
-    background: #c8452e;
+    background: #d84639;
   }
 
   .mission-block:nth-child(2) .mission-block-content {
-    background: #f4e9da;
+    background: #fff0de;
   }
 
   .mission-block:nth-child(3) .mission-block-content {
-    background: #d94e1c;
+    background: #f24405;
   }
 
   .mission-block-title {
@@ -499,12 +499,13 @@ main {
   }
 
   .expand-sticky {
-    padding: 3rem 0;
+    padding: 2rem 0;
   }
 
   .expand-intro p {
     font-size: 1rem;
     text-align: left;
+    line-height: 2rem;
   }
 
   .scroll-track-wrap {
@@ -561,6 +562,10 @@ main {
     padding-right: 0;
   }
 
+  .why-card p{
+    font-size: 16px;
+  }
+
 }
 
 .why-card p + p {
@@ -578,6 +583,11 @@ main {
     .about-hero-image img {
         display:none;
     }
+
+    .why-card p{
+    font-size: 16px;
+  }
+
 
     .expand-intro {
   padding: 0 1rem;
