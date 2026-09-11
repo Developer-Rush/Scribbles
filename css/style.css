@@ -62,7 +62,7 @@ input,textarea{font:inherit;}
 .container-4{max-width:33.3333%;}
 .container-5{display:none;padding-bottom:12.5rem;justify-content:center;align-items:center;}
 .container-6{display:flex;width:100%;max-height:100%;max-width:40%;min-height:600px;padding:4rem 3rem;flex-direction:column;justify-content:center;flex-wrap:nowrap;align-items:flex-start;background:#fff;}
-.container-7{flex:1;min-height:600px;background:url("../assets/images/home-lets-connect.webp") 68% center/cover no-repeat;}
+.container-7{flex:1;min-height:600px;background:url("../assets/images/home-lets-connect.webp") 100% center/cover no-repeat;}
 .container-10{display:flex;width:100%;max-width:33.333%;flex-direction:column;justify-content:center;flex-wrap:nowrap;align-items:flex-start;gap:20px;}
 .container-16{}
 .container-39{display:flex;margin:0;justify-content:flex-end;align-items:center;}
@@ -238,7 +238,7 @@ input,textarea{font:inherit;}
 @keyframes brand-scroll{from{transform:translateX(0);}to{transform:translateX(-50%);}}
 
 /* ---------- Section 408 — Contact ---------- */
-.section-408{display:block;padding:0;background-image:url("../assets/images/home-contact-bg.webp");background-position:50% 0%;background-size:cover;background-attachment:scroll;}
+.section-408{display:block;padding:0;background-image:url("../assets/images/home-contact-bg.webp");background-position:80% 0%;background-size:cover;background-attachment:scroll;}
 .home-conact-container{padding-top:0;flex-direction:row;flex-wrap:nowrap;display:flex;}
 .form-block{width:100%;}
 .form{display:flex;flex-direction:column;flex-wrap:nowrap;gap:20px;}
