@@ -139,8 +139,8 @@
          height) — measured from the track wrap (not the whole heading+
          description+timeline block) so added spacing above the timeline
          never shifts the trigger point. */
-      var startLine = viewportHeight * 0.8;
-      var totalDistance = viewportHeight * 0.5;
+      var startLine = viewportHeight * 0.7;
+      var totalDistance = viewportHeight * 0.35;
       var scrolledPastStart = startLine - rect.top;
       var progress = totalDistance > 0 ? scrolledPastStart / totalDistance : 0;
       progress = Math.max(0, Math.min(1, progress));

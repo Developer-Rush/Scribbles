@@ -423,23 +423,55 @@ main {
 }
 
 .scroll-track-wrap {
-  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: hidden;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-x;
+  scroll-snap-type: x mandatory;
+  scroll-padding-left: 8rem;
+  scrollbar-width: thin;
   margin-top: 4rem;
   max-width: 100rem;
   margin-left: auto;
   margin-right: auto;
+  padding-bottom: 0.75rem;
+}
+
+.scroll-track-wrap::-webkit-scrollbar {
+  height: 4px;
+}
+
+.scroll-track-wrap::-webkit-scrollbar-track {
+  background: rgba(17, 17, 17, 0.1);
+}
+
+.scroll-track-wrap::-webkit-scrollbar-thumb {
+  background: rgba(17, 17, 17, 0.4);
+  border-radius: 4px;
+}
+
+@media (min-width: 701px) {
+  .scroll-track-wrap {
+    scrollbar-width: none;
+    padding-bottom: 0;
+  }
+
+  .scroll-track-wrap::-webkit-scrollbar {
+    display: none;
+  }
 }
 
 .c-scroll-track {
   display: flex;
-  padding-left: 4rem;
+  padding-left: 8rem;
   padding-right: 4rem;
   will-change: transform;
 }
 
 .c-scrolling-item {
   flex: 0 0 auto;
-  width: 300px;
+  width: 220px;
+  scroll-snap-align: start;
 }
 
 .c-scrolling-line {
