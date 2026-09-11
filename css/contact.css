@@ -127,6 +127,7 @@ main {
   line-height: 3.5rem;
   text-transform: none;
   color: var(--contact-text);
+  padding-left:10px;
 }
 
 /* ---------- Contact form ---------- */

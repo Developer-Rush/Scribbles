@@ -369,7 +369,7 @@ main {
   .why-card p{ font-size: 1rem; }
 }
 
-.why-card{ padding-bottom: 1.5rem; }
+.why-card{ padding-bottom: 0.5rem; }
 .why-card h3{
   margin: 0 0 1.5rem;
   font-family: "FH Oscar", "Segoe UI", sans-serif;
