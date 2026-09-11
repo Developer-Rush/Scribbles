@@ -175,21 +175,74 @@
   var processFill = document.getElementById("processLineFill");
   var processLastStep = document.getElementById("processLastStep");
   if (processList && processTrack && processFill && processLastStep) {
+    var processTrackStart = 0;
     var processTrackHeight = 0;
+    var processSteps = Array.prototype.slice.call(processList.querySelectorAll(".process-step"));
+    var processStepOffsets = [];
+
+    /* One marker dot per step, sitting on the line at that step's
+       position — stays there permanently once the line reaches it,
+       instead of only the single moving dot at the fill's tip. */
+    var processDots = processSteps.map(function () {
+      var dot = document.createElement("div");
+      dot.className = "process-steps-dot";
+      processTrack.appendChild(dot);
+      return dot;
+    });
 
     var measureProcessLine = function () {
       var listRect = processList.getBoundingClientRect();
+      var firstRect = processSteps[0].getBoundingClientRect();
       var lastRect = processLastStep.getBoundingClientRect();
-      processTrackHeight = (lastRect.top - listRect.top) + (lastRect.height / 2);
+
+      /* The track itself starts at the vertical centre of the first
+         step (matching the reference), not the top of the list — so
+         both its CSS offset and its height are measured from there. */
+      processTrackStart = (firstRect.top - listRect.top) + (firstRect.height / 2);
+      processTrackHeight = (lastRect.top - listRect.top) + (lastRect.height / 2) - processTrackStart;
+      processTrack.style.top = processTrackStart + "px";
       processTrack.style.height = processTrackHeight + "px";
+
+      /* Each step's own vertical centre, relative to that same start
+         point — this is the point along the line the fill needs to
+         reach before that step is allowed to reveal. */
+      processStepOffsets = processSteps.map(function (step) {
+        var stepRect = step.getBoundingClientRect();
+        return (stepRect.top - listRect.top) + (stepRect.height / 2) - processTrackStart;
+      });
+
+      processDots.forEach(function (dot, i) {
+        /* Positioned against the track's own height (a %), so it stays
+           put even though the track itself is 0px tall until the fill
+           animates — using px against a 0-height parent would place
+           every dot at the very top. */
+        dot.style.top = (processTrackHeight > 0 ? (processStepOffsets[i] / processTrackHeight) * 100 : 0) + "%";
+      });
     };
 
     var updateProcessLine = function () {
       var rect = processList.getBoundingClientRect();
       var viewportMiddle = window.innerHeight / 2;
-      var progress = processTrackHeight > 0 ? (viewportMiddle - rect.top) / processTrackHeight : 0;
+      var progress = processTrackHeight > 0 ? (viewportMiddle - rect.top - processTrackStart) / processTrackHeight : 0;
       progress = Math.max(0, Math.min(1, progress));
       processFill.style.height = (progress * 100) + "%";
+
+      /* Fade each step in as the line/dot approaches it — not a hard
+         on/off switch. A step still a full "gap" away stays invisible;
+         the very next one already previews at partial opacity; a step
+         the dot has actually reached is fully opaque. The fade
+         distance is that step's own gap to the previous one, so it
+         scales naturally with the real spacing between cards. */
+      var fillPx = progress * processTrackHeight;
+      processSteps.forEach(function (step, i) {
+        var offset = processStepOffsets[i];
+        var fadeDistance = i > 0 ? (offset - processStepOffsets[i - 1]) : offset || 1;
+        var stepProgress = fadeDistance > 0 ? 1 - (offset - fillPx) / fadeDistance : 1;
+        stepProgress = Math.max(0, Math.min(1, stepProgress));
+        step.style.opacity = stepProgress;
+        step.style.transform = "translateY(" + (30 * (1 - stepProgress)) + "px)";
+        processDots[i].classList.toggle("is-active", fillPx >= offset);
+      });
     };
 
     var processTicking = false;

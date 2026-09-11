@@ -282,6 +282,26 @@ main {
   border-radius: 50px;
 }
 
+/* Permanent marker at each step's position on the line — created and
+   positioned by main.js, stays put once the moving fill reaches it. */
+.process-steps-dot {
+  position: absolute;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translate(-50%, -50%);
+  background: #ef3e28;
+  border: 2px solid #ef3e28;
+  border-radius: 50px;
+  z-index: 1;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.process-steps-dot.is-active {
+  opacity: 1;
+}
+
 .process-step {
   position: relative;
   z-index: 1;
@@ -293,6 +313,14 @@ main {
 
 .process-step.reverse {
   flex-direction: row-reverse;
+}
+
+/* Opacity/transform are driven continuously by main.js as the
+   scroll-linked progress line/dot approaches each step — this just
+   sets the starting state before JS takes over on first measure. */
+.process-step.reveal {
+  opacity: 0;
+  transform: translateY(30px);
 }
 
 .process-step-media {
