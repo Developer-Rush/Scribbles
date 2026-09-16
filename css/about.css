@@ -127,14 +127,33 @@ main {
 }
 
 .about-copy h1,
-.about-heading-wrap h1,
-.about-heading-wrap h2 {
+.about-heading-wrap h1{
   margin: 0;
   font-family: "FH Oscar", "Segoe UI", sans-serif;
   padding-left: 10px;
   font-weight: 600;
   font-size: 4rem;
   line-height: 4rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--about-text);
+}
+.about-heading-wrap h2{
+  margin: 0;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 4rem;
+  line-height: 3rem;
+  letter-spacing: normal;
+  text-transform: none;
+  color: var(--about-text);
+}
+.our-points-section .about-heading-wrap h2{
+  margin: 0;
+  font-family: "FH Oscar", "Segoe UI", sans-serif;
+  font-weight: 600;
+  font-size: 3rem;
+  line-height: 3rem;
   letter-spacing: normal;
   text-transform: none;
   color: var(--about-text);

@@ -71,7 +71,7 @@ input,textarea{font:inherit;}
 .text-block-5{display:block;text-align:left;}
 .text-size-regular{margin-bottom:0;padding-left:.5rem;font-family:var(--primary-font);color:var(--black-900);font-size:20px;line-height:1.4em;font-weight:300;letter-spacing:.5px;}
 .text-size-small{font-family:var(--primary-font);color:var(--black-900);font-size:.875rem;line-height:.875rem;font-weight:500;letter-spacing:5px;text-transform:uppercase;}
-.heading-style-h2{display:block;max-width:100%;padding-left:0;transform-origin:0% 100%;font-size:2rem;font-style:normal;font-weight:500;}
+.heading-style-h2{display:block;max-width:100%;padding-left:0;transform-origin:0% 100%;font-size:3rem ;font-style:normal;font-weight:700;margin-bottom: 20px;}
 .heading-style-h4{padding-bottom:10px;color:var(--black-900);font-weight:600;}
 .heading-style-h5{font-size:26px;line-height:1.4em;font-weight:500;text-transform:none;}
 .heading-12{text-transform:none;}
@@ -192,7 +192,8 @@ input,textarea{font:inherit;}
 /* ---------- Lookback Section (Season collection) ---------- */
 .lookback-section{position:relative;padding:0;background:transparent;}
 .lookbook-cointainer{padding-top:4rem;padding-right:2rem;padding-left:2rem;}
-.lookback-section .container-3{padding:20px 0;}
+.lookback-section .container-3{padding:20px 0;transition:transform .4s ease;}
+.lookback-section:hover .container-3{transform:scale(1.05);}
 .image-5{width:100%;}
 .heading-style-h4 .bold-text-2{}
 .text-block-2{font-size:1.4rem;line-height:1.4em;}
