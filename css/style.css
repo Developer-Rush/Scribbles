@@ -309,7 +309,7 @@ input,textarea{font:inherit;}
   .text-size-regular.process-content-top.rolling-content-para{padding-top:20px;}
   .home-about-content-wrapper{padding-bottom:1rem;}
   .home-pointer-wrapper{box-shadow:none;}
-  .text-style-xxlarge-2,.text-style-xxlarge-3{font-size:1rem;line-height:1.5rem;}
+  .text-style-xxlarge-2,.text-style-xxlarge-3{font-size:18px;line-height:1.5rem;}
   .section-2-container{padding-top:1rem;}
   .about-content-wrapper{position:static;top:auto;}
   .services-home-container{padding-top:2rem;padding-bottom:2rem;}
