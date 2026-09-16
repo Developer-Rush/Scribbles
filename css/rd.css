@@ -206,7 +206,7 @@ main {
   flex-flow: row;
   align-items: stretch;
   gap: 40px;
-  width: 80%;
+  width: 86%;
   max-width: 1400px;
   min-height: 100vh;
   margin: 0 auto 4rem;
@@ -278,7 +278,7 @@ main {
 .rich-text-block li {
   font-weight: 300;
   line-height: 1.5em;
-  margin-bottom: 0.6rem;
+  /* margin-bottom: 0.6rem; */
 }
 
 @media (max-width: 991px) {
@@ -350,6 +350,18 @@ main {
   border-top: 3px solid #000;
 }
 
+.rnd-hor-content.rd-reveal-seq.last{
+  display: flex;
+  flex-flow: row;
+  max-width: 1400px;
+  margin: 0 auto;
+  margin-bottom: 4rem;
+  padding: 3rem 40px;
+  border-top: 3px solid #000;
+
+
+}
+
 .rnd-heading {
   width: 60%;
 }
@@ -376,6 +388,11 @@ main {
 
 @media (max-width: 900px) {
   .rnd-hor-content {
+    flex-flow: column;
+    gap: 1.5rem;
+    padding: 2rem 1.2rem;
+  }
+  .rnd-hor-content.rd-reveal-seq.last{
     flex-flow: column;
     gap: 1.5rem;
     padding: 2rem 1.2rem;
