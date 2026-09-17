@@ -10,9 +10,9 @@
        - General-Inquiry.gs handles Home / About Us / R&D / Contact Us
        - Careers.gs handles the Careers application form
        - Collaboration.gs handles the site-wide "Let's collaborate!" popup */
-  var APPS_SCRIPT_GENERAL_URL = "https://script.google.com/macros/s/AKfycbzEdAbOcJJ9z9akCcGtsk3L7uL_kVGjUGbEXE1KwQYhU08v8SHGvYGvBaIP17XLTnTy/exec";
-  var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbxYHg_jOZxEykMYL6KtzmnHynxKNVKn4gA0nVoUycxH2IBSuBCG2QH-QzYBoyUJOZmQ/exec";
-  var APPS_SCRIPT_COLLABORATION_URL = "https://script.google.com/macros/s/AKfycbwVXoczgoVQ9CxJsyaWMGMH2TqAhNEdDWvPOU5vDMeY4GgJpUUxrs3WWVpEy5DMOKMtSw/exec";
+  var APPS_SCRIPT_GENERAL_URL = "https://script.google.com/macros/s/AKfycbzUJi5fX9gLg70gwkvkEkDGSopGqii7j_knXw36fY-u9_8QKjzRg_45tNXDubh3JM7u/exec";
+  var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbxICCc6elpEuYW6UOpXFXpYY1Mo49FNvUUFlKY6wmCP-Qu_HBZODjS4XPlxwNW2m93L/exec";
+  var APPS_SCRIPT_COLLABORATION_URL = "https://script.google.com/macros/s/AKfycbyQl0O66prZEC4VALF1u0C4ZSe7epL2-S1RGyx6TYCVu52eJfvRYJ4RRUtB3m5igHNa/exec";
 
   function wireForm(formId, scriptUrl) {
     var form = document.getElementById(formId);
