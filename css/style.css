@@ -270,9 +270,41 @@ input,textarea{font:inherit;}
 .footer-bottom-link img{width:14px;filter:invert(1);}
 .footer-padding{height:0;}
 
-/* ---------- Quick Contact Bar (component, off-canvas drawer) ---------- */
-.quick-contact-content-wrapper{position:fixed;inset:0;z-index:1000;display:flex;transform:translateX(100%);transition:transform .4s ease;pointer-events:none;}
-.quick-contact-content-wrapper.is-open{transform:translateX(0);pointer-events:auto;}
+/* ---------- Quick Contact floating trigger (desktop only) ---------- */
+.quick-contact-toggle{position:fixed;top:22.75rem;right:1.25rem;z-index:999;display:flex;align-items:center;justify-content:center;width:2.5rem;height:6.25rem;border:none;background:#000;cursor:pointer;}
+.quick-contact-toggle svg{width:16px;height:16px;stroke:#fff;}
+
+/* ---------- Quick Contact Bar (full-page popup, fade + bottom-to-top) ---------- */
+.quick-contact-content-wrapper{position:fixed;inset:0;z-index:999999;display:flex;align-items:center;justify-content:center;padding:5rem 2rem 3rem;background:#000;opacity:0;transform:translateY(60px);visibility:hidden;transition:opacity .5s ease,transform .5s ease,visibility 0s linear .5s;pointer-events:none;}
+.quick-contact-content-wrapper.is-open{opacity:1;transform:translateY(0);visibility:visible;pointer-events:auto;transition:opacity .5s ease,transform .5s ease;}
+.quick-contact-panel{position:relative;width:100%;max-width:75rem;max-height:100%;overflow-y:auto;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;gap:6.25rem;color:#fff;}
+.quick-contact-panel h1{margin:0;color:#fff;max-width:34.4375rem;}
+.quick-contact-panel .close-icon-wrapper{position:fixed;top:2.5rem;right:2.5rem;width:52px;height:52px;border-radius:50%;border:1px solid rgba(255,255,255,.5);background:transparent;color:#fff;font-size:1.5rem;font-weight:300;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:background .3s ease,color .3s ease,border-color .3s ease;z-index:2;}
+.quick-contact-panel .close-icon-wrapper:hover{background:#fff;color:#000;border-color:#fff;}
+.quick-contact-form{display:flex;flex-direction:column;gap:2rem;width:100%;}
+.quick-contact-row{display:grid;grid-template-columns:1fr 1fr;column-gap:1.5rem;row-gap:2rem;}
+.quick-contact-field{width:100%;height:3rem;background:transparent;border:none;border-bottom:3px solid rgba(255,255,255,.6);color:#fff;font-family:var(--primary-font);letter-spacing:2px;text-transform:capitalize;font-size:1rem;font-weight:500;line-height:1rem;padding:1rem 0;outline:none;}
+.quick-contact-field::placeholder{color:var(--black-700);}
+textarea.quick-contact-field{min-height:3rem;height:auto;resize:vertical;}
+.quick-contact-collections-label{font-family:var(--primary-font);font-size:20px;font-weight:300;letter-spacing:2px;color:var(--black-700);line-height:1rem;}
+.quick-contact-collections{display:flex;flex-wrap:wrap;column-gap:.75rem;row-gap:.75rem;margin-top:1.5rem;}
+.quick-contact-collections input{position:absolute;opacity:0;width:0;height:0;}
+.quick-contact-collections label{padding:1rem 1.25rem;background:#fff;color:#000;font-family:var(--primary-font);letter-spacing:2px;text-transform:capitalize;font-size:1rem;font-weight:500;line-height:1rem;cursor:pointer;transition:background .25s ease,color .25s ease;}
+.quick-contact-collections label:hover{background:#e2e2e2;}
+.quick-contact-collections input:checked + label{background:#000;color:#fff;box-shadow:inset 0 0 0 1px #fff;}
+.quick-contact-submit{align-self:flex-start;margin-top:20px;padding:.75rem 1.25rem;border:1px solid transparent;background:#fff;color:#000;font-family:var(--primary-font);letter-spacing:2px;font-size:1rem;font-weight:500;line-height:1rem;cursor:pointer;transition:background .25s ease,color .25s ease;}
+.quick-contact-submit:hover{background:#000;color:#fff;box-shadow:inset 0 0 0 1px #fff;}
+
+@media screen and (max-width:991px){
+  .quick-contact-toggle{display:none;}
+}
+@media screen and (max-width:767px){
+  .quick-contact-content-wrapper{padding:4rem 1.5rem 2.5rem;}
+  .quick-contact-panel{gap:2.5rem;}
+  .quick-contact-panel .close-icon-wrapper{top:1.25rem;right:1.25rem;width:44px;height:44px;font-size:1.25rem;}
+  .quick-contact-row{grid-template-columns:1fr;row-gap:1.5rem;}
+  .quick-contact-collections label{padding:.75rem 1.25rem;font-size:.9rem;}
+}
 
 /* ---------- Responsive ---------- */
 @media screen and (max-width: 991px){

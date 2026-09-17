@@ -5,12 +5,14 @@
   "use strict";
 
   /* ---------- Form submission (Google Apps Script backends) ----------
-     Two separate Apps Script projects, deployed separately, each with
+     Three separate Apps Script projects, deployed separately, each with
      its own Web App URL — paste them in below.
        - General-Inquiry.gs handles Home / About Us / R&D / Contact Us
-       - Careers.gs handles the Careers application form            */
+       - Careers.gs handles the Careers application form
+       - Collaboration.gs handles the site-wide "Let's collaborate!" popup */
   var APPS_SCRIPT_GENERAL_URL = "https://script.google.com/macros/s/AKfycbzEdAbOcJJ9z9akCcGtsk3L7uL_kVGjUGbEXE1KwQYhU08v8SHGvYGvBaIP17XLTnTy/exec";
   var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbxYHg_jOZxEykMYL6KtzmnHynxKNVKn4gA0nVoUycxH2IBSuBCG2QH-QzYBoyUJOZmQ/exec";
+  var APPS_SCRIPT_COLLABORATION_URL = "https://script.google.com/macros/s/AKfycbwVXoczgoVQ9CxJsyaWMGMH2TqAhNEdDWvPOU5vDMeY4GgJpUUxrs3WWVpEy5DMOKMtSw/exec";
 
   function wireForm(formId, scriptUrl) {
     var form = document.getElementById(formId);
@@ -50,6 +52,7 @@
     wireForm(id, APPS_SCRIPT_GENERAL_URL);
   });
   wireForm("careers-application-form", APPS_SCRIPT_CAREERS_URL);
+  wireForm("quick-contact-form", APPS_SCRIPT_COLLABORATION_URL);
 
   /* ---------- Hero video: force play (some contexts ignore the autoplay URL param on iframes) ---------- */
   document.querySelectorAll(".hero-video-wrap iframe").forEach(function (frame) {
@@ -95,20 +98,31 @@
     });
   }
 
-  /* ---------- Quick Contact drawer ---------- */
+  /* ---------- Quick Contact popup (full-page, fade + bottom-to-top) ---------- */
   var quickContact = document.getElementById("quickContact");
   var quickContactClose = document.getElementById("quickContactClose");
   if (quickContactClose && quickContact) {
     quickContactClose.addEventListener("click", function () {
       quickContact.classList.remove("is-open");
+      document.body.style.overflow = "";
     });
   }
-  document.querySelectorAll("[data-quick-contact-toggle]").forEach(function (trigger) {
-    trigger.addEventListener("click", function (e) {
-      e.preventDefault();
-      quickContact.classList.toggle("is-open");
+  if (quickContact) {
+    document.addEventListener("keydown", function (e) {
+      if (e.key === "Escape" && quickContact.classList.contains("is-open")) {
+        quickContact.classList.remove("is-open");
+        document.body.style.overflow = "";
+      }
     });
-  });
+    document.querySelectorAll("[data-quick-contact-toggle]").forEach(function (trigger) {
+      trigger.addEventListener("click", function (e) {
+        e.preventDefault();
+        var willOpen = !quickContact.classList.contains("is-open");
+        quickContact.classList.toggle("is-open", willOpen);
+        document.body.style.overflow = willOpen ? "hidden" : "";
+      });
+    });
+  }
 
   /* ---------- How We Work: scroll-linked horizontal timeline ----------
      No pinning — tracked against the whole heading+description+timeline

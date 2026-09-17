@@ -4,6 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>School Uniform Fabric Technology | R&amp;D</title>
+<meta name="description" content="Discover Scribbles' school uniform fabric technology - breathable, durable materials engineered for all-day comfort and performance.">
 <link rel="icon" type="image/png" href="../assets/images/favicon.png">
 <link rel="stylesheet" href="../css/style.css">
 <link rel="stylesheet" href="../css/rd.css">
@@ -26,6 +27,46 @@ gtag('config', 'G-RLBH8GPRSV');
 </script>
 </head>
 <body>
+
+<!-- Quick Contact toggle button (component, desktop only) -->
+<button type="button" class="quick-contact-toggle" data-quick-contact-toggle aria-label="Open contact form">
+  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+</button>
+
+<!-- Quick Contact Bar (component, full-page popup, hidden by default) -->
+<div class="quick-contact-content-wrapper" id="quickContact">
+  <div class="quick-contact-panel">
+    <button type="button" class="close-icon-wrapper" id="quickContactClose" aria-label="Close">&times;</button>
+    <h1>Let&rsquo;s collaborate!</h1>
+    <div class="form-block">
+      <form id="quick-contact-form" class="quick-contact-form">
+        <input type="hidden" name="Page" value="R&D">
+        <div class="quick-contact-row">
+          <input class="quick-contact-field" type="text" name="Name" placeholder="Full Name" required>
+          <input class="quick-contact-field" type="email" name="Email" placeholder="Email Address" required>
+        </div>
+        <textarea class="quick-contact-field" name="Message" placeholder="Project Details"></textarea>
+        <div>
+          <div class="quick-contact-collections-label">Our Collections</div>
+          <div class="quick-contact-collections">
+            <input type="checkbox" id="qc-polos" name="Collections" value="Polos"><label for="qc-polos">Polos</label>
+            <input type="checkbox" id="qc-shirts" name="Collections" value="Shirts"><label for="qc-shirts">Shirts</label>
+            <input type="checkbox" id="qc-jumpers" name="Collections" value="Jumpers"><label for="qc-jumpers">Jumpers</label>
+            <input type="checkbox" id="qc-pants" name="Collections" value="Pants"><label for="qc-pants">Pants</label>
+            <input type="checkbox" id="qc-skirts" name="Collections" value="Skirts"><label for="qc-skirts">Skirts</label>
+            <input type="checkbox" id="qc-shorts" name="Collections" value="Shorts"><label for="qc-shorts">Shorts</label>
+            <input type="checkbox" id="qc-blazers" name="Collections" value="Blazers"><label for="qc-blazers">Blazers</label>
+            <input type="checkbox" id="qc-sweaters" name="Collections" value="Sweaters"><label for="qc-sweaters">Sweaters</label>
+            <input type="checkbox" id="qc-others" name="Collections" value="Others"><label for="qc-others">Others</label>
+          </div>
+        </div>
+        <button type="submit" class="quick-contact-submit">Send Inquiry</button>
+      </form>
+      <div class="w-form-done" style="display:none;">Thank you! Your submission has been received!</div>
+      <div class="w-form-fail" style="display:none;">Oops! Something went wrong while submitting the form.</div>
+    </div>
+  </div>
+</div>
 <!-- Google Tag Manager (noscript) -->
 <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KGNQ4NTH"
 height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
