@@ -132,7 +132,7 @@ main {
 
 /* ---------- Contact form ---------- */
 .contact-form-section {
-  padding-top: 1rem;
+  /* padding-top: 1rem; */
   padding-bottom: 3rem;
 }
 
@@ -236,14 +236,14 @@ textarea.contact-field {
   margin: 0 0 1rem;
   font-family: "FH Oscar", "Segoe UI", sans-serif;
   font-weight: 600;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: var(--contact-text);
 }
 
 .location-card p {
   margin: 0 0 0.25rem;
-  font-size: 1.05rem;
-  line-height: 1.6;
+  font-size: 20px;
+  /* line-height: 1.6; */
   font-weight: 300;
   color: var(--contact-text);
 }

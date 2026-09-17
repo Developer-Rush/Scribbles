@@ -335,6 +335,13 @@ main {
     margin-bottom: 24px;
   }
 
+  .mission-block:nth-child(1) .mission-block-image,
+  .mission-block:nth-child(2) .mission-block-image {
+    aspect-ratio: 2.5 / 1;
+    object-fit: cover;
+    object-position: top;
+  }
+
   .mission-block-content,
   .mission-block-content.align-right {
     position: static;
@@ -352,7 +359,12 @@ main {
   }
 
   .mission-block:nth-child(3) .mission-block-content {
-    background: #f24405;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: auto;
+    background: transparent;
   }
 
   .mission-block-title {
@@ -382,7 +394,7 @@ main {
   margin-top: 2rem;
 }
 @media (max-width: 700px){
-  .why-grid{ grid-template-columns: 1fr; }
+  .why-grid{ grid-template-columns: 1fr;padding-bottom: 50px; }
   .divider{ width: 3rem; }
   .why-card h3{ font-size: 2rem; }
   .why-card p{ font-size: 1rem; }
@@ -646,5 +658,9 @@ main {
   margin: 0 auto;
   width: 100%;
   text-align: center;
+}
+
+.our-points-section .about-heading-wrap h2 {
+  font-size: 2.3rem;
 }
 }

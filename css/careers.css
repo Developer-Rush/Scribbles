@@ -79,6 +79,10 @@ body {
   .store-link {
     display: none;
   }
+  .careers-form-section {
+    padding-top: 0;
+    padding-bottom: 4rem;
+  }
 }
 
 /* ---------- Main / sections ---------- */
@@ -133,6 +137,10 @@ main {
 }
 
 @media (max-width: 640px) {
+  .careers-form-section {
+    padding-top: 0;
+    padding-bottom: 4rem;
+  }
   .careers-heading {
     font-size: 2.2rem;
     line-height: 2.4rem;
@@ -161,6 +169,10 @@ main {
 }
 
 @media (max-width: 700px) {
+  .careers-form-section {
+    padding-top: 0;
+    padding-bottom: 4rem;
+  }
   .careers-grid {
     grid-template-columns: 1fr;
     row-gap: 2rem;

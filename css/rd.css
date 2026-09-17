@@ -198,7 +198,7 @@ main {
 .rnd-sticky-section {
   position: relative;
   padding-top: 2rem;
-  padding-bottom: 2rem;
+  /* padding-bottom: 2rem; */
 }
 
 .rnd-sticky-container {
@@ -389,7 +389,7 @@ main {
 @media (max-width: 900px) {
   .rnd-hor-content {
     flex-flow: column;
-    gap: 1.5rem;
+    /* gap: 1.5rem; */
     padding: 2rem 1.2rem;
   }
   .rnd-hor-content.rd-reveal-seq.last{
