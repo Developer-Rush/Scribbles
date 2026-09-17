@@ -379,7 +379,7 @@ textarea.quick-contact-field{min-height:3rem;height:auto;resize:vertical;}
   .heading-style-h4{text-align:center;}
   .text-block-2{text-align:center;}
   .container-3{flex-direction:column;padding:40px 2rem;gap:24px;grid-template-columns:1fr 1fr;}
-  .section-407{background-position:50% 20%;background-size:100% auto;background-repeat:no-repeat;padding: 0px;height: auto;}
+  .section-407{background-position:100%;background-size:cover;background-repeat:no-repeat;padding: 0px;height: auto;}
   .section-408{padding:2rem 1.5rem;}
   .footer-left-content-wrapper{padding:0 1.5rem;}
   .full-screen-menu{overflow:auto;padding:1.5rem;grid-template-columns:1fr 1fr;}
