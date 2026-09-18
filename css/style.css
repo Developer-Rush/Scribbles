@@ -71,7 +71,7 @@ input,textarea{font:inherit;}
 .text-block-5{display:block;text-align:left;}
 .text-size-regular{margin-bottom:0;padding-left:.5rem;font-family:var(--primary-font);color:var(--black-900);font-size:20px;line-height:1.4em;font-weight:300;letter-spacing:.5px;}
 .text-size-small{font-family:var(--primary-font);color:var(--black-900);font-size:.875rem;line-height:.875rem;font-weight:500;letter-spacing:5px;text-transform:uppercase;}
-.heading-style-h2{display:block;max-width:100%;padding-left:0;transform-origin:0% 100%;font-size:3rem ;font-style:normal;font-weight:700;margin-bottom: 20px;}
+.heading-style-h2{line-height:2.4rem;block;max-width:100%;padding-left:0;transform-origin:0% 100%;font-size:3rem ;font-style:normal;font-weight:700;margin-bottom: 20px;}
 .heading-style-h4{padding-bottom:10px;color:var(--black-900);font-weight:600;}
 .heading-style-h5{font-size:26px;line-height:1.4em;font-weight:500;text-transform:none;}
 .heading-12{text-transform:none;}
@@ -369,7 +369,7 @@ textarea.quick-contact-field{min-height:3rem;height:auto;resize:vertical;}
   .text-ticker_carousel{color:#000;margin-top:-22px;padding-top:0;line-height:5.5rem;}
   .home-overlay-title{font-size:2.5rem;line-height:2.9rem;}
   .text-block-2{font-size:1rem;line-height:1.4em;}
-  .bg-heading-container{padding:4rem 0 4rem 1.5rem;}
+  .bg-heading-container{padding:7rem 0 4rem 1.5rem;background-color: #0000004d;}
   .lookback-section{padding-bottom:2rem;}
   .divider{width:60px;}
   .thoughts-item{max-width:100%;padding-right:0;}
@@ -391,7 +391,7 @@ textarea.quick-contact-field{min-height:3rem;height:auto;resize:vertical;}
   .footer-social-links-wrapper{align-items:flex-start;}
   .bg-patten-title-wrapper{margin-top:32px;}
   .blog-item-image{padding-bottom:0px;} 
-  .lookbook-cointainer{padding-top:0px;padding-left:1.2rem;padding-right:1.2rem;}
+  .lookbook-cointainer{padding-top:40px;padding-left:1.2rem;padding-right:1.2rem;}
   .patten-bg-title-wrapper {padding-left:1.2rem;padding-right:1.2rem;}
   .blog-list-wrapper{padding-left:1.2rem;padding-right:1.2rem;}
 

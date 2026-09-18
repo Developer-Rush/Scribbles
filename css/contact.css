@@ -201,6 +201,10 @@ textarea.contact-field {
     font-size: 1rem;
     padding: 1.1rem 0;
   }
+
+  .location-card p{
+    font-size: 16px !important;
+  }
 }
 
 /* ---------- Locations / Contact Details ---------- */
@@ -224,6 +228,9 @@ textarea.contact-field {
     grid-template-columns: 1fr;
     gap: 2rem;
   }
+  .location-card p{
+    font-size: 16px;
+  }
 }
 
 .location-card {
@@ -246,6 +253,7 @@ textarea.contact-field {
   /* line-height: 1.6; */
   font-weight: 300;
   color: var(--contact-text);
+  letter-spacing: 0.5px;
 }
 
 .location-card a.contact-link {

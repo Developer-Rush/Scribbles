@@ -169,6 +169,7 @@ main {
   .rnd-hero-copy {
     max-width: 100%;
     padding: 2.5rem 1.5rem;
+    padding-left:20px;
   }
 
   .rd-heading-wrap {
@@ -208,8 +209,8 @@ main {
   gap: 40px;
   width: 86%;
   max-width: 1400px;
-  min-height: 100vh;
-  margin: 0 auto 4rem;
+  min-height: 90vh;
+  margin: 0 auto;
   position: sticky;
   top: 8vh;
   background: var(--rd-bg);

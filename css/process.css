@@ -532,4 +532,7 @@ main {
   .process-closing-copy p {
     font-size: 1rem;
   }
+  .process-closing-heading-wrap {
+    padding: 2rem 0;
+  }
 }

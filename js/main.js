@@ -135,10 +135,14 @@
   var expandBlock = document.querySelector(".expand-sticky");
   if (scrollTrack && trackWrap && expandBlock) {
     var timelineMQ = window.matchMedia("(min-width: 701px)");
+    var timelineTabletMQ = window.matchMedia("(min-width: 701px) and (max-width: 1199px)");
     var maxTranslate = 0;
 
     var measureTrack = function () {
-      maxTranslate = Math.max(0, scrollTrack.scrollWidth - trackWrap.clientWidth);
+      /* +24px safety buffer — on tablet widths the last item was landing a
+         few pixels short of fully clearing the wrap edge, so nudge the
+         travel distance slightly further to guarantee it fully arrives. */
+      maxTranslate = Math.max(0, scrollTrack.scrollWidth - trackWrap.clientWidth + 24);
       if (!timelineMQ.matches) {
         scrollTrack.style.transform = "";
       }
@@ -154,7 +158,11 @@
          description+timeline block) so added spacing above the timeline
          never shifts the trigger point. */
       var startLine = viewportHeight * 0.7;
-      var totalDistance = viewportHeight * 0.35;
+      /* On tablet widths the track has more horizontal distance to cover
+         relative to how much vertical scroll room the section gets, so the
+         slide needs to finish faster (over a shorter scroll distance) to
+         fully reach the last item before the section scrolls past. */
+      var totalDistance = viewportHeight * (timelineTabletMQ.matches ? 0.12 : 0.35);
       var scrolledPastStart = startLine - rect.top;
       var progress = totalDistance > 0 ? scrolledPastStart / totalDistance : 0;
       progress = Math.max(0, Math.min(1, progress));
@@ -178,6 +186,13 @@
     window.addEventListener("load", function () {
       measureTrack();
       updateTrack();
+      /* Web fonts / images can still reflow the track just after "load"
+         fires, which would leave maxTranslate measured a touch short —
+         re-measure once more after things settle. */
+      setTimeout(function () {
+        measureTrack();
+        updateTrack();
+      }, 400);
     });
     measureTrack();
     updateTrack();
