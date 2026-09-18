@@ -369,7 +369,14 @@ main {
   .rich-text-block,
   .rich-text-block .paragraph {
     font-size: 1rem;
+    padding-top:0 !important;
   }
+  .rich-text-block{
+    padding-top: 0 !important;
+  }
+
+
+
 }
 
 /* ---------- Horizontal text sections (Evolving / Technology / Investment) ---------- */
@@ -426,7 +433,6 @@ main {
   }
   .rnd-hor-content.rd-reveal-seq.last{
     flex-flow: column;
-    gap: 1.5rem;
     padding: 2rem 1.2rem;
   }
 
