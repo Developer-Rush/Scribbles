@@ -2,7 +2,9 @@ RewriteEngine On
 
 # Any unmatched/invalid URL serves the custom 404 page (still returns a
 # real 404 status code, so search engines correctly treat it as not found).
-ErrorDocument 404 /404
+# Points straight at the .html file (not the clean URL) so LiteSpeed serves
+# it directly without needing a second pass through the rewrite rules.
+ErrorDocument 404 /404.html
 
 # /index or /index.html should always redirect to the site root,
 # never show as its own URL.
