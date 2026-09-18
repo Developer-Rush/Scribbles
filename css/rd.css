@@ -370,6 +370,7 @@ main {
   .rich-text-block .paragraph {
     font-size: 1rem;
     padding-top:0 !important;
+    margin-bottom: 0;
   }
   .rich-text-block{
     padding-top: 0 !important;
