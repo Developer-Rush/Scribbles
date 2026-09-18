@@ -1,0 +1,13 @@
+RewriteEngine On
+
+# If someone requests a page with the .html extension directly,
+# send them to the clean, extension-less URL (avoids duplicate URLs
+# for the same page and keeps the address bar clean everywhere).
+RewriteCond %{THE_REQUEST} ^[A-Z]{3,9}\ /([^.\s]+)\.html[\s?] [NC]
+RewriteRule ^ /%1 [NC,L,R=301]
+
+# Internally serve the matching .html file for a clean URL request,
+# without changing what shows in the address bar.
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteCond %{REQUEST_FILENAME}\.html -f
+RewriteRule ^([^.]+)$ $1.html [NC,L]
