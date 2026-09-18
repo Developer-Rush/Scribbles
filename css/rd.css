@@ -19,6 +19,11 @@ body {
   background: #f7f4e8;
 }
 
+.hero-padd{
+  max-width: 450px;
+  margin:0 auto;
+}
+
 .site-header .nav-container {
   display: flex;
   align-items: center;
@@ -102,7 +107,7 @@ main {
   justify-content: center;
   align-items: flex-start;
   padding: 4rem;
-  padding-left: 10rem;
+  /* padding-left: 10rem; */
 }
 
 .rd-heading-wrap {
