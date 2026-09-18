@@ -79,6 +79,9 @@ body {
   .store-link {
     display: none;
   }
+  .process-heading-wrap{
+    padding: 2rem 0 !important;
+  }
 }
 
 /* ---------- Main / sections ---------- */
