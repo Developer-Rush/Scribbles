@@ -59,8 +59,11 @@ http.createServer((req, res) => {
 
   fs.readFile(filePath, (err, data) => {
     if (err) {
-      res.writeHead(404, { "Content-Type": "text/plain" });
-      res.end("404 Not Found: " + urlPath);
+      // Matches the .htaccess "ErrorDocument 404 /404" rule.
+      fs.readFile(path.join(root, "404.html"), (err404, data404) => {
+        res.writeHead(404, { "Content-Type": "text/html" });
+        res.end(err404 ? "404 Not Found: " + urlPath : data404);
+      });
       return;
     }
     const ext = path.extname(filePath).toLowerCase();

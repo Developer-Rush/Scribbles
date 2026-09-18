@@ -7,6 +7,67 @@
 <link rel="icon" type="image/png" href="assets/images/favicon.png">
 <link rel="stylesheet" href="css/style.css">
 <style>
+  /* ---------- Header (shared pattern, same as contact/careers/process/rd/about) ---------- */
+  .site-header{
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: var(--bg-cream);
+  }
+  .site-header .nav-container{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 100rem;
+    margin: 0 auto;
+    padding: 1rem 2rem;
+  }
+  .nav-logo{
+    display: inline-flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  .nav-logo img{
+    width: 140px;
+    height: auto;
+    display: block;
+  }
+  .nav-right{
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .store-link{
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4rem;
+    padding-right: 20px;
+    border: none;
+    background: transparent;
+    color: var(--black-900);
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    letter-spacing: 0.03em;
+  }
+  .store-link img{
+    width: 18px;
+    height: 18px;
+    display: block;
+  }
+  @media (max-width: 640px){
+    .site-header .nav-container{
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+    .nav-logo img{
+      width: 132px;
+    }
+    .store-link{
+      display: none;
+    }
+  }
+
   .section-404{
     padding: 96px var(--space-md);
   }
@@ -81,25 +142,46 @@
 
     <div class="nav-right">
       <a href="https://scribblesuniforms.com/store" target="_blank" rel="noopener" class="store-link">
-        <img src="assets/icons/shopping-bag.svg" alt="">
+        <img src="assets/icons/shopping-bag.svg" alt="" class="shop-icon">
         <span>Shop</span>
       </a>
-      <button class="menu-button" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-        <span class="burger-line"></span>
-      </button>
+      <div class="nav-bar">
+        <div class="menu-button-2" id="hamburgerBtn" aria-label="Open menu" aria-expanded="false">
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+          <div class="burger-line"></div>
+        </div>
+        <div class="full-screen-menu" id="fullScreenMenu">
+          <div class="container-large hamburger-menu-container">
+            <div class="container-10">
+              <div class="menu-heading-text">Who we are</div>
+              <a href="/" class="nav-link-2">Home</a>
+              <a href="school-uniform-suppliers" class="nav-link-2">About us</a>
+              <a href="careers" class="nav-link-2">Careers</a>
+            </div>
+            <div class="container-10">
+              <div class="menu-heading-text">What we do</div>
+              <a href="school-uniform-manufacturing-process" class="nav-link-2">Process</a>
+              <a href="school-uniform-fabric-technology" class="nav-link-2">R&amp;D</a>
+            </div>
+            <div class="container-10">
+              <div class="menu-heading-text">Store</div>
+              <a href="https://scribblesuniforms.com/store" class="nav-link-2" target="_blank" rel="noopener">Store</a>
+            </div>
+            <div class="container-10">
+              <div class="menu-heading-text">Get in touch</div>
+              <a href="contact" class="nav-link-2">Contact Us</a>
+              <div class="footer-social-links header-menu-social-icon-wrapper">
+                <a href="https://www.facebook.com/scribblesatschool" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/icons/facebook.svg" alt="Facebook"></a>
+                <a href="https://www.instagram.com/scribblesuniforms/?hl=en" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/icons/instagram.svg" alt="Instagram"></a>
+                <a href="https://in.linkedin.com/company/scribbles-uniforms" class="footer-social-link" target="_blank" rel="noopener"><img src="assets/icons/linkedin.svg" alt="LinkedIn"></a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
-
-  <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile">
-    <a href="/">Home</a>
-    <a href="#">Why Us</a>
-    <a href="#">Products</a>
-    <a href="#">Lookbook</a>
-    <a href="school-uniform-manufacturing-process">Process</a>
-    <a href="contact">Contact</a>
-  </nav>
 </header>
 
 <main>

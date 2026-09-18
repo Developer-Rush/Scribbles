@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# Any unmatched/invalid URL serves the custom 404 page (still returns a
+# real 404 status code, so search engines correctly treat it as not found).
+ErrorDocument 404 /404
+
 # /index or /index.html should always redirect to the site root,
 # never show as its own URL.
 RewriteRule ^index(\.html)?$ / [NC,L,R=301]
