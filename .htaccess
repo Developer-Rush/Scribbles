@@ -1,5 +1,9 @@
 RewriteEngine On
 
+# /index or /index.html should always redirect to the site root,
+# never show as its own URL.
+RewriteRule ^index(\.html)?$ / [NC,L,R=301]
+
 # If someone requests a page with the .html extension directly,
 # send them to the clean, extension-less URL (avoids duplicate URLs
 # for the same page and keeps the address bar clean everywhere).

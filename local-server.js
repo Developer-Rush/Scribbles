@@ -28,6 +28,13 @@ const mime = {
 http.createServer((req, res) => {
   const urlPath = decodeURIComponent(req.url.split("?")[0]);
 
+  // /index or /index.html should always redirect to the site root.
+  if (/^\/index(\.html)?$/i.test(urlPath)) {
+    res.writeHead(301, { Location: "/" });
+    res.end();
+    return;
+  }
+
   // Redirect *.html requests to the clean URL (matches the .htaccess rule).
   if (/\.html$/i.test(urlPath)) {
     const clean = urlPath.replace(/\.html$/i, "") || "/";
