@@ -242,7 +242,7 @@ input,textarea{font:inherit;}
 .section-408{display:block;padding:0;background-image:url("../assets/images/home-contact-bg.webp");background-position:80% 0%;background-size:cover;background-attachment:scroll;}
 .home-conact-container{padding-top:0;flex-direction:row;flex-wrap:nowrap;display:flex;}
 .form-block{width:100%;}
-.form{display:flex;flex-direction:column;flex-wrap:nowrap;gap:20px;}
+.form{padding-top:10px;display:flex;flex-direction:column;flex-wrap:nowrap;gap:20px;}
 .home-form-field{width:100%;padding:8px 12px;font-size:14px;border:none;border-bottom:2px solid var(--black-900);background:transparent;color:var(--black-900);outline:none;}
 .home-form-field::placeholder{color:var(--black-700);}
 .form-btn-wrapper{position:relative;width:100%;}
