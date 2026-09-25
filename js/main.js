@@ -14,6 +14,50 @@
   var APPS_SCRIPT_CAREERS_URL = "https://script.google.com/macros/s/AKfycbyUqku-wI9mXCy0AhbhDFwWHyM4GGG_fG5eq7s9VV1Uyv3qmcOw-WHIHbZU8JomfDYA/exec";
   var APPS_SCRIPT_COLLABORATION_URL = "https://script.google.com/macros/s/AKfycbzDetPFiM4TxGImuK4h3igeS3k5MpcQu4T3NTahrH-6VMf98wifq_C3lAv-V36pmWkm/exec";
 
+  /* ---------- Phone number validation (Home/About/R&D, Contact, Careers) ----------
+     Rejects the obviously-fake numbers people were submitting: too short
+     ("1234"), all the same digit ("1111111111"), or a straight run like
+     "1234567890" / "9876543210". Uses the browser's native validation
+     bubble via setCustomValidity, so no extra markup or CSS is needed. */
+  function isRepeatedDigits(digits) {
+    return /^(\d)\1{9}$/.test(digits);
+  }
+
+  function isSequentialDigits(digits) {
+    var ascending = true, descending = true;
+    for (var i = 1; i < digits.length; i++) {
+      var diff = (digits.charCodeAt(i) - digits.charCodeAt(i - 1) + 10) % 10;
+      if (diff !== 1) ascending = false;
+      if (diff !== 9) descending = false;
+    }
+    return ascending || descending;
+  }
+
+  function validatePhoneField(input) {
+    input.setCustomValidity("");
+    var digits = input.value.replace(/\D/g, "");
+
+    if (digits.length !== 10) {
+      input.setCustomValidity("Please enter a valid 10-digit phone number.");
+      return false;
+    }
+    if (!/^[6-9]/.test(digits)) {
+      input.setCustomValidity("Please enter a valid mobile number.");
+      return false;
+    }
+    if (isRepeatedDigits(digits) || isSequentialDigits(digits)) {
+      input.setCustomValidity("Please enter a real phone number.");
+      return false;
+    }
+    return true;
+  }
+
+  document.querySelectorAll('input[type="tel"]').forEach(function (phoneInput) {
+    phoneInput.addEventListener("input", function () {
+      phoneInput.setCustomValidity("");
+    });
+  });
+
   function wireForm(formId, scriptUrl) {
     var form = document.getElementById(formId);
     if (!form) return;
@@ -24,6 +68,16 @@
 
     form.addEventListener("submit", function (e) {
       e.preventDefault();
+
+      var phoneValid = true;
+      form.querySelectorAll('input[type="tel"]').forEach(function (phoneInput) {
+        if (!validatePhoneField(phoneInput)) phoneValid = false;
+      });
+      if (!phoneValid) {
+        form.reportValidity();
+        return;
+      }
+
       if (failMsg) failMsg.style.display = "none";
       if (submitBtn) submitBtn.disabled = true;
 
