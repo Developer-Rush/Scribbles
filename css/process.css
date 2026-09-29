@@ -150,8 +150,8 @@ main {
   font-family: "FH Oscar", "Segoe UI", sans-serif;
   padding-left: 10px;
   font-weight: 700;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 62px;
+  line-height: 62px;
   letter-spacing: normal;
   text-transform: capitalize;
   color: var(--process-text);

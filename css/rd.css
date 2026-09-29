@@ -136,8 +136,8 @@ main {
   margin: 0;
   font-family: "FH Oscar", "Segoe UI", sans-serif;
   font-weight: 700;
-  font-size: 3rem;
-  line-height: 3rem;
+  font-size: 62px;
+  line-height: 62px;
   letter-spacing: normal;
   text-transform: none;
   color: var(--rd-text);
