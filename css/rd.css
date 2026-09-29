@@ -379,6 +379,7 @@ main {
     font-size: 1rem;
     padding-top:0 !important;
     margin-bottom: 0;
+    padding-left:4px;
   }
   .rich-text-block{
     padding-top: 0 !important;
